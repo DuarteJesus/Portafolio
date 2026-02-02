@@ -3,7 +3,7 @@
 Portafolio personal de desarrollo web creado con HTML y CSS.
 
 ## 🌐 Sitio web
-👉 https://TU_USUARIO.github.io/portafolio/
+👉 https://DuarteJesus.github.io/portafolio/
 
 ## 🛠️ Tecnologías usadas
 - HTML
