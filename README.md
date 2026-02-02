@@ -1,2 +1,13 @@
-# Portafolio
-Portafolio personal de desarrollo web. Proyecto creado con HTML y CSS donde muestro mis habilidades, proyectos básicos y mi proceso de aprendizaje.
+# Portafolio Web
+
+Portafolio personal de desarrollo web creado con HTML y CSS.
+
+## 🌐 Sitio web
+👉 https://TU_USUARIO.github.io/portafolio/
+
+## 🛠️ Tecnologías usadas
+- HTML
+- CSS
+
+## 📌 Sobre mí
+Estudiante de 16 años apasionado por la tecnología y el desarrollo web, en constante aprendizaje y creación de proyectos prácticos.
