@@ -1,3 +1,42 @@
+@media (max-width: 900px) {
+  .FULL {
+    max-width: 98vw;
+    padding: 8px 2vw 0 2vw;
+  }
+  .ContactSections {
+    max-width: 98vw;
+    padding: 0 2vw;
+  }
+  .Habilidades, .Proyectos {
+    max-width: 98vw;
+    padding: 8px 2vw;
+  }
+  .Sobre_mi {
+    max-width: 98vw;
+    padding: 8px 2vw;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .TITULO h1, .TITULO h2 {
+    font-size: 1rem;
+  }
+  .Sobre_mi, .Biografia {
+    font-size: 0.95rem;
+    padding: 6px 1vw;
+  }
+  .Habilidades, .Proyectos {
+    font-size: 0.95rem;
+    padding: 6px 1vw;
+  }
+  .ContactSections h2 {
+    font-size: 0.95rem;
+  }
+  .img-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 body {
@@ -8,7 +47,9 @@ body {
 .FULL {
   width: 100%;
   min-height: 100vh;
-  padding: 24px 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 12px 8px 0 8px;
   box-sizing: border-box;
   background: transparent;
 }
@@ -16,46 +57,39 @@ body {
 .TITULO {
   text-align: center;
   width: 100%;
-  margin: 0 0 20px 0;
-  padding: 16px 0;
-  font-size: 1.6rem;
+  margin: 0 0 8px 0;
+  padding: 8px 0 4px 0;
+  font-size: 1.2rem;
   font-weight: 400;
   color: #222;
   background: transparent;
   font-family: Duarte;
-  font-size: 1.1rem;
-  font-weight: 400;
 }
 
 .Biografia {
   text-align: center;
   width: 100%;
-  margin: 0 0 20px 0;
-  padding: 16px 0;
-  font-size: 1.6rem;
-  font-weight: 700;
+  margin: 24px 0 12px 0;
+  padding: 8px 0;
+  font-size: 1.1rem;
+  font-weight: 200;
   color: #222;
   background: transparent;
   font-family: Duarte;
-  font-size: 1.6rem;
-  font-weight: 200;
 }
 
 .Sobre_mi {
   text-align: center;
   width: 100%;
-  margin: 0 0 auto 20%;
-  padding: 16px 0;
-  font-size: 1.6rem;
-  font-weight: 700;
+  margin: 0 auto 8px auto;
+  padding: 8px 0;
+  font-size: 1.1rem;
+  font-weight: 200;
   color: #222;
   background: transparent;
   font-family: Duarte;
-  font-size: 1.1rem;
-  font-weight: 200;
-  max-width: 100%;
-  padding: 0 10px;
-  text-align: center;
+  max-width: 700px;
+  display: block;
 }
 
 @media (min-width: 800px) {
@@ -67,22 +101,23 @@ body {
 
 .Fila {
   display: flex;
-  gap: 24px;
+  gap: 12px;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
+  margin-bottom: 8px;
 }
 
 .Habilidades, .Proyectos {
-  flex: 1 1 300px;
-  max-width: 480px;
-  padding: 16px;
+  flex: 1 1 260px;
+  max-width: 360px;
+  padding: 10px 8px;
   text-align: center;
   background: rgb(241, 245, 207);
   border-radius: 8px;
   font-family: Duarte;
   box-shadow: 0 2px 6px rgb(241, 245, 207);
-  margin-top: 60px;
+  margin-top: 12px;
 }
 
 .Habilidades p,
@@ -139,10 +174,10 @@ a {
   font-weight: 200;
 }
 
-.Informacion_de_contacto {
+.Redes_Sociales {
   text-align: center;
   width: 100%;
-  margin: 0px 0px 20px 0;
+  margin: 0px 0px 0px 0;
   padding: 16px 0;
   font-size: 1.6rem;
   font-weight: 700;
@@ -170,4 +205,70 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+@media (max-width: 700px) {
+  .Redes_Sociales , .Información_de_Contacto { flex-basis: 100%; max-width: 100%; }
+} 
+
+.Información_de_Contacto {
+  text-align: center;
+  width: 100%;
+  margin: 0px 0px 0 0;
+  padding: 16px 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  background: transparent;
+  font-family: Duarte;
+  font-size: 0.8rem;
+  font-weight: 200;
+  }
+
+.ContactSections {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 8px;
+}
+
+.ContactSections > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 320px;
+  text-align: center;
+  padding: 8px 12px;
+}
+
+.ContactSections h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.contact-grid {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .ContactSections {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+  }
+  .ContactSections > section {
+    width: 100%;
+  }
 }
