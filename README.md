@@ -1,6 +1,6 @@
-# Portafolio Web
+# Pagina web de STAFF de SuperCraft
 
-Portafolio personal de desarrollo web creado con HTML y CSS.
+Mi informacion como STAFF de SuperCraft
 
 ## 🌐 Sitio web
 👉 https://github.com/DuarteJesus/Portafolio
@@ -10,4 +10,4 @@ Portafolio personal de desarrollo web creado con HTML y CSS.
 - CSS
 
 ## 📌 Sobre mí
-Estudiante de 16 años apasionado por la tecnología y el desarrollo web, en constante aprendizaje y creación de proyectos prácticos.
+actualmente staff, D-Helper
