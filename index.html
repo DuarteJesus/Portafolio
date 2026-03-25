@@ -10,100 +10,129 @@
   <link rel="stylesheet" href="fonts/fonts.css">
 </head>
 <body>
-  <div class="FULL">
-    <header class="TITULO">
-      <img class="perfil" src="img/Foto de perfil.jpg" alt="Foto de perfil de Duarte">
-      <div class="TITULO-text">
-        <h1>Duarte Jesús</h1>
-        <h2>Estudiante de Desarrollo Web y Programación</h2>
-      </div>
-    </header>
+	<header class="sc-header">
+		<nav class="sc-navbar">
+			<div class="sc-logo">
+				<a href="https://supercraft.es/" target="_blank">
+					<img src="https://supercraft.es/favicon.ico" alt="SuperCraft Logo" style="height:48px;">
+				</a>
+			</div>
+			<ul class="sc-navlinks">
+				<li><a href="#">Inicio</a></li>
+				<li><a href="#biografia">Biografía</a></li>
+				<li><a href="#experiencia">Experiencia</a></li>
+				<li><a href="#estadisticas">Estadísticas</a></li>
+				<li><a href="https://supercraft.es/staff/" target="_blank">Staff Oficial</a></li>
+			</ul>
+			<div class="sc-mc-ip">
+				<span>MC.SUPERCRAFT.ES</span>
+				<button onclick="navigator.clipboard.writeText('MC.SUPERCRAFT.ES')">¡CLICK PARA COPIAR!</button>
+			</div>
+		</nav>
+	</header>
 
-    <main>
-      <section class="Sobre_mi">
-        <h2>Sobre mí</h2>
-        <p>Soy estudiante de 16 años con un gran interés por la tecnología y el desarrollo web.
-        Me gusta aprender creando proyectos prácticos, por lo que actualmente estudio HTML, CSS y Python, buscando mejorar constantemente y avanzar paso a paso en el mundo de la programación.</p>
-      </section>
+	<main>
+		<section class="sc-hero fade-in" id="biografia">
+			<div class="sc-hero-content">
+				<img src="https://minotar.net/avatar/duaarte/128" alt="Avatar de duaarte" class="sc-avatar">
+				<h1>Duarte | STAFF de SuperCraft</h1>
+				<p>Ayudando a la comunidad desde diciembre de 2023</p>
+				<a href="https://supercraft.es/staff/" target="_blank" class="sc-btn">Ver perfil público</a>
+			</div>
+		</section>
 
-      <section class="Fila">
-        <div class="Habilidades">
-          <h2>Habilidades</h2>
-          <ul>
-            <li>HTML – Intermedio</li>
-            <li>CSS – Básico</li>
-            <li>Python – Básico</li>
-            <li>Lógica de programación</li>
-            <li>Aprendizaje continuo </li>
-          </ul>
-        </div>
+			<section class="sc-card sc-bio fade-in">
+				<h2>Sobre mí</h2>
+				<p>Soy Duarte, jugador del servidor desde el <b>29 de mayo de 2021</b>.<br>
+				Fui staff anteriormente en <b>2023</b> y contaba con más de un año de experiencia.<br>
+				Actualmente, miembro del staff desde <b>25 de marzo de 2026</b>, ayudando a mantener el orden y brindar soporte a la comunidad.<br>
+				Me apasiona crear un ambiente seguro y divertido para todos.</p>
+			</section>
 
-        <div class="Proyectos">
-          <h2>Proyectos</h2>
-          <ul>
-            <li>
-              <a href="Proyectos/01.Calculadora-basica.zip"> Calculadora básica</a>
-              <p class="project-desc">Calculadora en Python con operaciones básicas y uso de condicionales.</p>
-            </li>
-            <li>
-              <a href="Proyectos/02-Portafolio.zip">Sitio web personal</a>
-              <p class="project-desc">Página web personal desarrollada con HTML y CSS, enfocada en una estructura clara y diseño limpio.</p>
-            </li>
-          </ul>
-        </div>
-      </section>
+		<section class="sc-card sc-exp fade-in" id="experiencia">
+			<h2>Experiencia como Staff</h2>
+			<ul>
+				<li>Chat Helper</li>
+				<li>Helper</li>
+				<li>Moderador</li>
+				<li>Colaborador en eventos</li>
+			</ul>
+		</section>
 
-      <section class="Biografia">
-        <h2>Información personal</h2>
-        <h4>Duarte Jesús Alzamora Castro</h4>
-        <p>Colombia • Estudiante • 16 años</p>
-        <p>Disponible para aprender, colaborar en proyectos y seguir creciendo como desarrollador web.</p>
-      </section>
+		<section class="sc-card sc-resp fade-in">
+			<h2>Responsabilidades</h2>
+			<ul>
+				<li>Resolver tickets de soporte</li>
+				<li>Ayudar a jugadores con problemas</li>
+				<li>Moderar el chat del servidor</li>
+				<li>Resolver conflictos entre jugadores</li>
+				<li>Organizar y apoyar eventos</li>
+			</ul>
+		</section>
 
-      <div class="ContactSections">
-      <section class="Redes_Sociales">
-        <h2>Redes Sociales</h2>
-        <div class="contact-grid">
-          <a class="img-btn" href="https://www.instagram.com/duarte_jessus/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <img src="icons/logo de instagram.jpg" alt="Instagram">
-          </a>
+		<section class="sc-card sc-stats fade-in" id="estadisticas">
+			<h2>Estadísticas</h2>
+			<div class="stats">
+				   <div class="stat">
+					   <p style="margin-bottom: 6px; font-weight: bold; color: #38bdf8;">Tickets atendidos</p>
+					   <h3>+1000</h3>
+				   </div>
+				   <div class="stat">
+					   <p style="margin-bottom: 6px; font-weight: bold; color: #38bdf8;">STAFF de SuperCraft desde</p>
+					   <h3>2026</h3>
+				   </div>
+				   <div class="stat">
+					   <p style="margin-bottom: 6px; font-weight: bold; color: #38bdf8;">Jugador de SuperCraft desde</p>
+					   <h3>2021</h3>
+				   </div>
+			</div>
+		</section>
 
-          <a class="img-btn" href="https://github.com/DuarteJesus" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <img src="icons/Logo github.jpg" alt="GitHub">
-          </a>
+		<section class="sc-card sc-social fade-in">
+			<h2>Redes de SuperCraft</h2>
+			<div class="sc-social-links">
+				<a href="https://discord.com/invite/mzQhMNXvhH" target="_blank" title="Discord">
+					<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" style="height:28px;width:28px;vertical-align:middle;margin-right:8px;"> Discord
+				</a>
+				<a href="https://www.instagram.com/supercraftes" target="_blank" title="Instagram">
+					<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="height:28px;width:28px;vertical-align:middle;margin-right:8px;"> Instagram
+				</a>
+				<a href="https://www.tiktok.com/@supercraftes" target="_blank" title="TikTok">
+					<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" style="height:28px;width:28px;vertical-align:middle;margin-right:8px;"> TikTok
+				</a>
+				<a href="https://www.youtube.com/channel/UCLzU8w7SMbqHL_D1ewpKLBw" target="_blank" title="YouTube">
+					<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" style="height:28px;width:28px;vertical-align:middle;margin-right:8px;"> YouTube
+				</a>
+			</div>
+		</section>
+	</main>
 
-          <a class="img-btn" href="https://www.tiktok.com/@duarte_jesu" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-            <img src="icons/logo de tiktok.jpg" alt="TikTok">
-          </a>
-
-          <a class="img-btn" href="https://www.youtube.com/@Duartedevv" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <img src="icons/logo de youtube.jpg" alt="YouTube">
-          </a>
-          
-          <a class="img-btn" href="https://www.twitch.tv/duarteec" target="_blank" rel="noopener noreferrer" aria-label="Twitch">
-            <img src="icons/logo de twitch.jpg" alt="Twitch">
-          </a>
-          
-        </div>
-      </section>
-      <section class="Información_de_Contacto">
-        <h2>Informacion de Contacto</h2>
-        <div class="contact-grid">
-          <a class="img-btn" href="https://wa.me/573054117726" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <img src="icons/logo de whatsapp2.jpg" alt="WhatsApp">
-          </a>
-
-          <a class="img-btn" href="mailto:contacto@duartedev.lat?subject=Contacto%20desde%20web&body=Hola%20Duarte%2C%0A" aria-label="Enviar correo">
-            <img src="icons/logo de email.jpg" alt="Correo electrónico">
-          </a>
-        </div>
-      </section>
-      </div>
-    </main>
-  </div>
+	<footer class="sc-footer">
+		<div class="sc-footer-logo">
+			<a href="https://supercraft.es/" target="_blank">
+				<img src="https://supercraft.es/favicon.ico" alt="Logo SuperCraft" style="height:40px;">
+			</a>
+		</div>
+		<div class="sc-footer-text">
+			<p>© 2026 SuperCraft - Todos los Derechos Reservados | No tenemos afiliación con ninguna marca del mundo real.</p>
+			<p> STAFF de Supercraft | Duarte</p>
+		</div>
+	</footer>
 </body>
-
+<script>
+// Animación de aparición al hacer scroll
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add('visible');
+		}
+	});
+}, { threshold: 0.15 });
+fadeEls.forEach(el => observer.observe(el));
+</script>
 </html>
+```
 
 
 
