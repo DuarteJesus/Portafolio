@@ -10,4 +10,4 @@ Mi informacion como STAFF de SuperCraft
 - CSS
 
 ## 📌 Sobre mí
-actualmente staff, D-Helper
+actualmente staff, Moderador
