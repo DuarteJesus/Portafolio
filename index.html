@@ -2,116 +2,259 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="description
-  content="Portafolio personal de Duarte Jesús, desarrollador web junior en formación con conocimientos en HTML, CSS y Python.">
-  <meta name="google-site-verification" content="CN-4XT2iMkXCOcP5jVHrl-X3906BRuwpKj99eNe0TtQ" />
-  <title>Duarte | STAFF SUPERCRAFT </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portafolio personal de Duarte, desarrollador web junior en formación con conocimientos en HTML, CSS y Python.">
+  <title>Duarte | Desarrollador Web</title>
+  <meta name="google-site-verification" content="google6b931fd6cae1dd04.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="fonts/fonts.css">
 </head>
 <body>
-	<header class="sc-header">
-		<nav class="sc-navbar">
-			<div class="sc-logo">
-				<a href="https://supercraft.es/" target="_blank">
-					<img src="https://supercraft.es/favicon.ico" alt="SuperCraft Logo" style="height:48px;">
-				</a>
-			</div>
-			<ul class="sc-navlinks">
-				<li><a href="#">Inicio</a></li>
-				<li><a href="#biografia">Biografía</a></li>
-				<li><a href="#experiencia">Experiencia</a></li>
-				<li><a href="#estadisticas">Estadísticas</a></li>
-				<li><a href="https://supercraft.es/staff/" target="_blank">Staff Oficial</a></li>
-			</ul>
-			<div class="sc-mc-ip">
-				<span>MC.SUPERCRAFT.ES</span>
-				<button onclick="navigator.clipboard.writeText('MC.SUPERCRAFT.ES')">¡CLICK PARA COPIAR!</button>
-			</div>
-		</nav>
-	</header>
+  <canvas id="fondo" aria-hidden="true"></canvas>
+  <div id="brasas" aria-hidden="true"></div>
 
-	<main>
-		<section class="sc-hero fade-in" id="biografia">
-			<div class="sc-hero-content">
-				<img src="https://minotar.net/avatar/duaarte/128" alt="Avatar de duaarte" class="sc-avatar">
-				<h1>Duarte | STAFF de SuperCraft</h1>
-				<p>Ayudando a la comunidad desde diciembre de 2023</p>
-				<a href="https://supercraft.es/staff/" target="_blank" class="sc-btn">Ver perfil público</a>
-			</div>
-		</section>
+  <header class="nav">
+    <a class="logo" href="#inicio">Duarte</a>
+    <nav aria-label="Principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#que-hago">Lo que hago</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-			<section class="sc-card sc-bio fade-in">
-				<h2>Sobre mí</h2>
-				<p>Soy Duarte, jugador del servidor desde el <b>29 de mayo de 2021</b>.<br>
-				Fui staff anteriormente en <b>2023</b> y contaba con más de un año de experiencia.<br>
-				Actualmente, miembro del staff desde <b>25 de marzo de 2026</b>, ayudando a mantener el orden y brindar soporte a la comunidad.<br>
-				Me apasiona crear un ambiente seguro y divertido para todos.</p>
-			</section>
+  <section class="hero" id="inicio">
+    <h1>Duarte</h1>
+    <p>Estudiante y desarrollador web junior.</p>
+  </section>
 
-		<section class="sc-card sc-exp fade-in" id="experiencia">
-			<h2>Experiencia como Staff</h2>
-			<ul>
-				<li>Chat Helper</li>
-				<li>Helper</li>
-				<li>Moderador</li>
-				<li>Colaborador en eventos</li>
-			</ul>
-		</section>
+  <main class="tarjeta">
+    <aside class="lateral">
+      <img class="avatar" src="img/Foto de perfil.jpg" alt="Foto de perfil de Duarte">
+      <h2 class="lateral-nombre">Duarte</h2>
+      <p class="lateral-rol">Estudiante y desarrollador web junior</p>
 
-		<section class="sc-card sc-resp fade-in">
-			<h2>Responsabilidades</h2>
-			<ul>
-				<li>Resolver tickets de soporte</li>
-				<li>Ayudar a jugadores con problemas</li>
-				<li>Moderar el chat del servidor</li>
-				<li>Resolver conflictos entre jugadores</li>
-				<li>Organizar y apoyar eventos</li>
-			</ul>
-		</section>
+      <dl>
+        <dt>Ubicación</dt>
+        <dd>Colombia</dd>
+        <dt>Lenguajes</dt>
+        <dd>HTML, CSS y Python</dd>
+        <dt>Nivel</dt>
+        <dd>Junior, en formación continua</dd>
+      </dl>
+    </aside>
 
-		<section class="sc-card sc-stats fade-in" id="estadisticas">
-			<h2>Estadísticas</h2>
-			<div class="stats">
-				   <div class="stat">
-					   <p style="margin-bottom: 6px; font-weight: bold; color: #38bdf8;">Tickets atendidos</p>
-					   <h3>+3000</h3>
-				   </div>
-				   <div class="stat">
-					   <p style="margin-bottom: 6px; font-weight: bold; color: #38bdf8;">STAFF de SuperCraft desde</p>
-					   <h3>2026</h3>
-				   </div>
-				   <div class="stat">
-					   <p style="margin-bottom: 6px; font-weight: bold; color: #38bdf8;">Jugador de SuperCraft desde</p>
-					   <h3>2021</h3>
-				   </div>
-			</div>
-		</section>
+    <div class="contenido">
+      <section id="sobre-mi">
+        <h2>Sobre Duarte</h2>
+        <p class="destacado">Soy Duarte, estudiante con mucho interés por la tecnología y el desarrollo web. Aprendo creando proyectos prácticos con HTML, CSS y Python, y trato de mejorar un poco en cada uno.</p>
+        <p class="suave">Estoy en formación continua y abierto a aprender nuevas tecnologías.</p>
+      </section>
 
-		<section class="sc-card sc-social fade-in">
-			<h2>Redes de SuperCraft</h2>
-			<div class="sc-social-links">
-				<a href="https://discord.com/invite/mzQhMNXvhH" target="_blank" title="Discord">
-					<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" style="height:28px;width:28px;vertical-align:middle;margin-right:8px;"> Discord
-				</a>
-				<a href="https://www.instagram.com/supercraftes" target="_blank" title="Instagram">
-					<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="height:28px;width:28px;vertical-align:middle;margin-right:8px;"> Instagram
-				</a>
-				<a href="https://www.tiktok.com/@supercraftes" target="_blank" title="TikTok">
-					<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" style="height:28px;width:28px;vertical-align:middle;margin-right:8px;"> TikTok
-				</a>
-				<a href="https://www.youtube.com/channel/UCLzU8w7SMbqHL_D1ewpKLBw" target="_blank" title="YouTube">
-					<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" style="height:28px;width:28px;vertical-align:middle;margin-right:8px;"> YouTube
-				</a>
-			</div>
-		</section>
-	</main>
+      <section id="que-hago">
+        <h2>Lo que hago</h2>
+        <div class="rejilla">
+          <article>
+            <h3>Desarrollo web</h3>
+            <p class="sub">HTML y CSS</p>
+            <p class="det">Creo páginas sencillas y las voy mejorando con cada proyecto.</p>
+          </article>
+          <article>
+            <h3>Programación</h3>
+            <p class="sub">Python y lógica</p>
+            <p class="det">Escribo programas pequeños para practicar, como una calculadora.</p>
+          </article>
+          <article>
+            <h3>Proyectos propios</h3>
+            <p class="sub">Calculadora y portafolio</p>
+            <p class="det">Cada uno me sirve para practicar algo nuevo.</p>
+          </article>
+          <article>
+            <h3>Aprendizaje</h3>
+            <p class="sub">Paso a paso</p>
+            <p class="det">Busco mejorar en cada proyecto y aprender de mis errores.</p>
+          </article>
+        </div>
+      </section>
 
-	<footer class="sc-footer">
-		<div class="sc-footer-logo">
-			<a href="https://supercraft.es/" target="_blank">
-				<img src="https://supercraft.es/favicon.ico" alt="Logo SuperCraft" style="height:40px;">
-			</a>
+      <section id="proyectos">
+        <h2>Proyectos</h2>
+        <div class="fila-datos">
+          <div>
+            <h3>Descargables</h3>
+            <p class="meta">Archivos .zip</p>
+          </div>
+          <ul>
+            <li>
+              <a href="Proyectos/01.Calculadora-basica.zip">Calculadora básica</a>
+              <span>Programa en Python con operaciones básicas.</span>
+            </li>
+            <li>
+              <a href="Proyectos/02-Portafolio.zip">Portafolio</a>
+              <span>Página web personal creada con HTML y CSS.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <div class="fila-datos">
+          <div>
+            <h3>Encuéntrame en</h3>
+            <p class="meta">Redes y correo</p>
+          </div>
+          <ul class="enlaces">
+            <li><a href="mailto:duartedigital@icloud.com?subject=Contacto%20desde%20web&body=Hola%20Duarte%2C%0A">Correo electrónico</a></li>
+            <li><a href="https://github.com/DuarteJesus" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.instagram.com/duarte_jessus/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@duarte_jesu" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+            <li><a href="https://www.youtube.com/@Duarteec" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <span>Portafolio personal de Duarte</span>
+    <a href="https://github.com/DuarteJesus" target="_blank" rel="noopener noreferrer">github.com/DuarteJesus</a>
+  </footer>
+
+  <script>
+    (function () {
+      var PX = 5; // tamaño de cada bloque del paisaje, en píxeles de pantalla
+      var canvas = document.getElementById('fondo');
+      var ctx = canvas.getContext('2d');
+
+      // Generador pseudoaleatorio con semilla: el paisaje es igual en cada carga
+      function prng(seed) {
+        return function () {
+          seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+          var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+          t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+          return ((t ^ t >>> 14) >>> 0) / 4294967296;
+        };
+      }
+
+      // Colinas escalonadas: la altura cambia cada "paso" bloques
+      function relieve(rand, w, base, amp, paso) {
+        var alturas = new Array(w);
+        var y = base;
+        for (var x = 0; x < w; x += paso) {
+          y += Math.round((rand() - 0.5) * amp);
+          y = Math.max(base - amp * 3, Math.min(base + amp * 3, y));
+          for (var i = 0; i < paso && x + i < w; i++) alturas[x + i] = y;
+        }
+        return alturas;
+      }
+
+      function dibujar() {
+        var w = Math.ceil(window.innerWidth / PX);
+        var h = Math.ceil(window.innerHeight / PX);
+        canvas.width = w;
+        canvas.height = h;
+        var rand = prng(2026);
+
+        // Cielo
+        var cielo = ctx.createLinearGradient(0, 0, 0, h);
+        cielo.addColorStop(0, '#07051a');
+        cielo.addColorStop(0.5, '#26103f');
+        cielo.addColorStop(0.72, '#5a2347');
+        cielo.addColorStop(0.84, '#b5502f');
+        ctx.fillStyle = cielo;
+        ctx.fillRect(0, 0, w, h);
+
+        // Resplandor alrededor de la luna
+        var lx = Math.floor(w * 0.8), ly = Math.floor(h * 0.3);
+        var brillo = ctx.createRadialGradient(lx, ly, 2, lx, ly, Math.max(w, h) * 0.35);
+        brillo.addColorStop(0, 'rgba(255,150,60,0.35)');
+        brillo.addColorStop(1, 'rgba(255,150,60,0)');
+        ctx.fillStyle = brillo;
+        ctx.fillRect(0, 0, w, h);
+
+        // Estrellas
+        for (var i = 0; i < 110; i++) {
+          var sx = Math.floor(rand() * w), sy = Math.floor(rand() * h * 0.6);
+          ctx.fillStyle = 'rgba(255,255,255,' + (0.25 + rand() * 0.6).toFixed(2) + ')';
+          ctx.fillRect(sx, sy, 1, 1);
+        }
+
+        // Luna cuadrada
+        ctx.fillStyle = '#ffb347';
+        ctx.fillRect(lx - 4, ly - 4, 9, 9);
+        ctx.fillStyle = '#e6952f';
+        ctx.fillRect(lx - 2, ly - 2, 3, 3);
+        ctx.fillRect(lx + 1, ly + 1, 2, 2);
+
+        // Tres capas de colinas
+        var capas = [
+          { base: 0.64, color: '#2b1848', borde: '#4a2a63', amp: 3 },
+          { base: 0.74, color: '#1d1136', borde: '#33204e', amp: 3 },
+          { base: 0.86, color: '#110a24', borde: '#241639', amp: 2 }
+        ];
+        var faroles = [];
+        capas.forEach(function (capa, n) {
+          var alturas = relieve(rand, w, Math.floor(h * capa.base), capa.amp, 5);
+          for (var x = 0; x < w; x++) {
+            var y = alturas[x];
+            ctx.fillStyle = capa.color;
+            ctx.fillRect(x, y, 1, h - y);
+            ctx.fillStyle = capa.borde;
+            ctx.fillRect(x, y, 1, 1);
+            if (rand() < 0.08) {
+              ctx.fillStyle = 'rgba(255,255,255,0.04)';
+              ctx.fillRect(x, y + 2 + Math.floor(rand() * 12), 2, 2);
+            }
+          }
+          if (n === 1) {
+            for (var k = 1; k <= 4; k++) {
+              var fx = Math.floor(w * k / 5 + rand() * 8);
+              faroles.push({ x: fx, y: alturas[fx] });
+            }
+          }
+        });
+
+        // Faroles brillantes sobre la colina del medio
+        faroles.forEach(function (f) {
+          var g = ctx.createRadialGradient(f.x + 2, f.y - 3, 1, f.x + 2, f.y - 3, 14);
+          g.addColorStop(0, 'rgba(255,140,40,0.45)');
+          g.addColorStop(1, 'rgba(255,140,40,0)');
+          ctx.fillStyle = g;
+          ctx.fillRect(f.x - 14, f.y - 18, 32, 32);
+          ctx.fillStyle = '#ff8a1f';
+          ctx.fillRect(f.x, f.y - 5, 5, 5);
+          ctx.fillStyle = '#ffd27a';
+          ctx.fillRect(f.x + 1, f.y - 4, 3, 2);
+        });
+      }
+
+      var temporizador;
+      window.addEventListener('resize', function () {
+        clearTimeout(temporizador);
+        temporizador = setTimeout(dibujar, 150);
+      });
+      dibujar();
+
+      // Brasas flotando (se omiten si la persona prefiere menos movimiento)
+      var reducir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reducir) {
+        var contenedor = document.getElementById('brasas');
+        for (var b = 0; b < 18; b++) {
+          var brasa = document.createElement('span');
+          brasa.style.left = (Math.random() * 100) + '%';
+          brasa.style.animationDuration = (9 + Math.random() * 10) + 's';
+          brasa.style.animationDelay = (-Math.random() * 18) + 's';
+          contenedor.appendChild(brasa);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
 		</div>
 		<div class="sc-footer-text">
 			<p> STAFF de Supercraft | Duarte</p>
