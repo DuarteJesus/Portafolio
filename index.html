@@ -2,17 +2,47 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portafolio personal de Duarte, desarrollador web junior en formación con conocimientos en HTML, CSS y Python.">
-  <title>Duarte | Desarrollador Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Duarte | Desarrollador Web y Python</title>
+  <meta name="description" content="Portafolio de Duarte, estudiante y desarrollador junior de Colombia. Proyectos en Python, FastAPI, HTML y CSS.">
+  <link rel="canonical" href="https://duartedev.lat/">
+  <meta name="theme-color" content="#0b0814">
   <meta name="google-site-verification" content="google6b931fd6cae1dd04.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://duartedev.lat/">
+  <meta property="og:site_name" content="Duarte">
+  <meta property="og:title" content="Duarte | Desarrollador Web y Python">
+  <meta property="og:description" content="Estudiante y desarrollador junior. Mira mis proyectos en Python, FastAPI, HTML y CSS.">
+  <meta property="og:locale" content="es_CO">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230b0814'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%23ff7a1a'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Duarte",
+    "url": "https://duartedev.lat/",
+    "jobTitle": "Desarrollador web junior",
+    "address": { "@type": "PostalAddress", "addressCountry": "CO" },
+    "sameAs": [
+      "https://github.com/DuarteJesus",
+      "https://www.instagram.com/duarte_jessus/",
+      "https://www.tiktok.com/@duarte_jesu",
+      "https://www.youtube.com/@Duarteec"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
   <canvas id="fondo" aria-hidden="true"></canvas>
   <div id="brasas" aria-hidden="true"></div>
 
@@ -20,82 +50,144 @@
     <a class="logo" href="#inicio">Duarte</a>
     <nav aria-label="Principal">
       <a href="#sobre-mi">Sobre mí</a>
-      <a href="#que-hago">Lo que hago</a>
       <a href="#proyectos">Proyectos</a>
+      <a href="#comunidad">Comunidad</a>
+      <a href="#habilidades">Habilidades</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
   <section class="hero" id="inicio">
     <h1>Duarte</h1>
-    <p>Estudiante y desarrollador web junior.</p>
+    <p>Estudiante y desarrollador junior. Construyo apps con Python y páginas con HTML y CSS.</p>
+    <div class="acciones">
+      <a class="boton" href="#proyectos">Ver proyectos</a>
+      <a class="boton secundario" href="#contacto">Contacto</a>
+    </div>
   </section>
 
-  <main class="tarjeta">
+  <main class="tarjeta" id="contenido">
     <aside class="lateral">
-      <img class="avatar" src="img/Foto de perfil.jpg" alt="Foto de perfil de Duarte">
+      <div class="avatar">
+        <span aria-hidden="true">D</span>
+        <img src="img/Foto de perfil.jpg" alt="Foto de perfil de Duarte" width="92" height="92" onerror="this.remove()">
+      </div>
       <h2 class="lateral-nombre">Duarte</h2>
-      <p class="lateral-rol">Estudiante y desarrollador web junior</p>
+      <p class="lateral-rol">Estudiante y desarrollador junior</p>
 
       <dl>
         <dt>Ubicación</dt>
         <dd>Colombia</dd>
         <dt>Lenguajes</dt>
-        <dd>HTML, CSS y Python</dd>
-        <dt>Nivel</dt>
-        <dd>Junior, en formación continua</dd>
+        <dd>Python, HTML y CSS</dd>
+        <dt>Comunidad</dt>
+        <dd>Staff de SuperCraft</dd>
+        <dt>Proyecto principal</dt>
+        <dd><a href="#proyectos">Gestor de Finanzas</a></dd>
+        <dt>Código</dt>
+        <dd><a href="https://github.com/DuarteJesus" target="_blank" rel="noopener noreferrer">github.com/DuarteJesus</a></dd>
       </dl>
     </aside>
 
     <div class="contenido">
       <section id="sobre-mi">
         <h2>Sobre Duarte</h2>
-        <p class="destacado">Soy Duarte, estudiante con mucho interés por la tecnología y el desarrollo web. Aprendo creando proyectos prácticos con HTML, CSS y Python, y trato de mejorar un poco en cada uno.</p>
-        <p class="suave">Estoy en formación continua y abierto a aprender nuevas tecnologías.</p>
+        <p class="destacado">Soy Duarte, estudiante con mucho interés por la tecnología y el desarrollo web, y parte del staff de SuperCraft. Aprendo creando proyectos prácticos y trato de mejorar un poco en cada uno.</p>
+        <p class="suave">Mi proyecto más grande hasta ahora es un gestor de finanzas hecho con Python: una aplicación con su propio servidor, cuentas de usuario y base de datos. Sigo en formación continua y abierto a aprender nuevas tecnologías.</p>
       </section>
 
       <section id="que-hago">
         <h2>Lo que hago</h2>
         <div class="rejilla">
           <article>
-            <h3>Desarrollo web</h3>
+            <h3>Aplicaciones con Python</h3>
+            <p class="sub">Gestor de finanzas</p>
+            <p class="det">Una aplicación para llevar cuentas, monedas y movimientos, pensada para Windows y Android.</p>
+          </article>
+          <article>
+            <h3>Servidores y datos</h3>
+            <p class="sub">FastAPI y SQLite</p>
+            <p class="det">Creo la API que sincroniza los datos, con inicio de sesión y contraseñas guardadas con hash.</p>
+          </article>
+          <article>
+            <h3>Páginas web</h3>
             <p class="sub">HTML y CSS</p>
-            <p class="det">Creo páginas sencillas y las voy mejorando con cada proyecto.</p>
-          </article>
-          <article>
-            <h3>Programación</h3>
-            <p class="sub">Python y lógica</p>
-            <p class="det">Escribo programas pequeños para practicar, como una calculadora.</p>
-          </article>
-          <article>
-            <h3>Proyectos propios</h3>
-            <p class="sub">Calculadora y portafolio</p>
-            <p class="det">Cada uno me sirve para practicar algo nuevo.</p>
+            <p class="det">Páginas como este portafolio, que voy mejorando versión tras versión.</p>
           </article>
           <article>
             <h3>Aprendizaje</h3>
             <p class="sub">Paso a paso</p>
-            <p class="det">Busco mejorar en cada proyecto y aprender de mis errores.</p>
+            <p class="det">Empecé con proyectos pequeños, como una calculadora, y voy subiendo la dificultad.</p>
           </article>
         </div>
       </section>
 
       <section id="proyectos">
         <h2>Proyectos</h2>
+        <div class="proyectos">
+          <article class="proyecto">
+            <h3>Gestor de Finanzas</h3>
+            <p>Aplicación de finanzas con cuentas, monedas y movimientos. Tiene interfaz de escritorio hecha con Flet y una API con FastAPI que sincroniza los datos entre dispositivos, con inicio de sesión por JWT y contraseñas con bcrypt.</p>
+            <ul class="etiquetas" aria-label="Tecnologías">
+              <li>Python</li><li>Flet</li><li>FastAPI</li><li>SQLite</li><li>Docker</li>
+            </ul>
+            <a class="enlace" href="https://github.com/DuarteJesus/Gestor-Finanzas" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+          </article>
+
+          <article class="proyecto">
+            <h3>Calculadora básica</h3>
+            <p>Programa en Python con las operaciones básicas.</p>
+            <ul class="etiquetas" aria-label="Tecnologías">
+              <li>Python</li>
+            </ul>
+            <a class="enlace" href="Proyectos/01.Calculadora-basica.zip">Descargar .zip</a>
+          </article>
+
+          <article class="proyecto">
+            <h3>Portafolio</h3>
+            <p>Página web personal hecha con HTML y CSS, donde muestro mis habilidades y mi proceso de aprendizaje.</p>
+            <ul class="etiquetas" aria-label="Tecnologías">
+              <li>HTML</li><li>CSS</li>
+            </ul>
+            <a class="enlace" href="https://github.com/DuarteJesus/Portafolio" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="comunidad">
+        <h2>Comunidad</h2>
         <div class="fila-datos">
           <div>
-            <h3>Descargables</h3>
-            <p class="meta">Archivos .zip</p>
+            <h3>Staff de SuperCraft</h3>
+            <p class="meta">Equipo de staff</p>
           </div>
           <ul>
-            <li>
-              <a href="Proyectos/01.Calculadora-basica.zip">Calculadora básica</a>
-              <span>Programa en Python con operaciones básicas.</span>
-            </li>
-            <li>
-              <a href="Proyectos/02-Portafolio.zip">Portafolio</a>
-              <span>Página web personal creada con HTML y CSS.</span>
-            </li>
+            <li>Formo parte del equipo de staff de SuperCraft.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="habilidades">
+        <h2>Habilidades</h2>
+        <div class="fila-datos">
+          <div>
+            <h3>Lenguajes</h3>
+            <p class="meta">Con mi nivel actual</p>
+          </div>
+          <ul>
+            <li><strong>HTML</strong><span>Básico / Intermedio</span></li>
+            <li><strong>CSS</strong><span>Básico</span></li>
+            <li><strong>Python</strong><span>Básico</span></li>
+            <li><strong>Lógica de programación</strong><span>En práctica constante</span></li>
+          </ul>
+        </div>
+        <div class="fila-datos separada">
+          <div>
+            <h3>Herramientas</h3>
+            <p class="meta">Las he usado en mis proyectos</p>
+          </div>
+          <ul class="etiquetas grande" aria-label="Herramientas">
+            <li>FastAPI</li><li>Flet</li><li>SQLite</li><li>Docker</li><li>JWT</li><li>bcrypt</li><li>Git y GitHub</li>
           </ul>
         </div>
       </section>
@@ -108,29 +200,30 @@
             <p class="meta">Redes y correo</p>
           </div>
           <ul class="enlaces">
-            <li><a href="mailto:duartedigital@icloud.com?subject=Contacto%20desde%20web&body=Hola%20Duarte%2C%0A">Correo electrónico</a></li>
+            <li id="item-correo"><noscript>Activa JavaScript para ver mi correo.</noscript></li>
             <li><a href="https://github.com/DuarteJesus" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="https://www.instagram.com/duarte_jessus/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             <li><a href="https://www.tiktok.com/@duarte_jesu" target="_blank" rel="noopener noreferrer">TikTok</a></li>
             <li><a href="https://www.youtube.com/@Duarteec" target="_blank" rel="noopener noreferrer">YouTube</a></li>
           </ul>
         </div>
+        <p class="estado" id="estado" role="status" aria-live="polite"></p>
       </section>
     </div>
   </main>
 
   <footer class="pie">
-    <span>Portafolio personal de Duarte</span>
-    <a href="https://github.com/DuarteJesus" target="_blank" rel="noopener noreferrer">github.com/DuarteJesus</a>
+    <span>Portafolio personal de Duarte · 2026</span>
+    <a href="#inicio">Volver arriba</a>
   </footer>
 
   <script>
     (function () {
-      var PX = 5; // tamaño de cada bloque del paisaje, en píxeles de pantalla
+      /* ---------- Paisaje pixelado ---------- */
+      var PX = 5; // tamaño de cada bloque en píxeles de pantalla
       var canvas = document.getElementById('fondo');
       var ctx = canvas.getContext('2d');
 
-      // Generador pseudoaleatorio con semilla: el paisaje es igual en cada carga
       function prng(seed) {
         return function () {
           seed |= 0; seed = seed + 0x6D2B79F5 | 0;
@@ -140,7 +233,6 @@
         };
       }
 
-      // Colinas escalonadas: la altura cambia cada "paso" bloques
       function relieve(rand, w, base, amp, paso) {
         var alturas = new Array(w);
         var y = base;
@@ -152,14 +244,18 @@
         return alturas;
       }
 
+      var anchoDibujado = 0;
+
       function dibujar() {
+        anchoDibujado = window.innerWidth;
         var w = Math.ceil(window.innerWidth / PX);
-        var h = Math.ceil(window.innerHeight / PX);
+        // Un poco más alto que la pantalla: así no se deforma cuando
+        // la barra del navegador del celular aparece o se esconde.
+        var h = Math.ceil(window.innerHeight * 1.15 / PX);
         canvas.width = w;
         canvas.height = h;
         var rand = prng(2026);
 
-        // Cielo
         var cielo = ctx.createLinearGradient(0, 0, 0, h);
         cielo.addColorStop(0, '#07051a');
         cielo.addColorStop(0.5, '#26103f');
@@ -168,7 +264,6 @@
         ctx.fillStyle = cielo;
         ctx.fillRect(0, 0, w, h);
 
-        // Resplandor alrededor de la luna
         var lx = Math.floor(w * 0.8), ly = Math.floor(h * 0.3);
         var brillo = ctx.createRadialGradient(lx, ly, 2, lx, ly, Math.max(w, h) * 0.35);
         brillo.addColorStop(0, 'rgba(255,150,60,0.35)');
@@ -176,21 +271,18 @@
         ctx.fillStyle = brillo;
         ctx.fillRect(0, 0, w, h);
 
-        // Estrellas
         for (var i = 0; i < 110; i++) {
           var sx = Math.floor(rand() * w), sy = Math.floor(rand() * h * 0.6);
           ctx.fillStyle = 'rgba(255,255,255,' + (0.25 + rand() * 0.6).toFixed(2) + ')';
           ctx.fillRect(sx, sy, 1, 1);
         }
 
-        // Luna cuadrada
         ctx.fillStyle = '#ffb347';
         ctx.fillRect(lx - 4, ly - 4, 9, 9);
         ctx.fillStyle = '#e6952f';
         ctx.fillRect(lx - 2, ly - 2, 3, 3);
         ctx.fillRect(lx + 1, ly + 1, 2, 2);
 
-        // Tres capas de colinas
         var capas = [
           { base: 0.64, color: '#2b1848', borde: '#4a2a63', amp: 3 },
           { base: 0.74, color: '#1d1136', borde: '#33204e', amp: 3 },
@@ -218,7 +310,6 @@
           }
         });
 
-        // Faroles brillantes sobre la colina del medio
         faroles.forEach(function (f) {
           var g = ctx.createRadialGradient(f.x + 2, f.y - 3, 1, f.x + 2, f.y - 3, 14);
           g.addColorStop(0, 'rgba(255,140,40,0.45)');
@@ -232,14 +323,17 @@
         });
       }
 
+      // Solo se redibuja si cambia el ANCHO. En el celular, la altura
+      // cambia al hacer scroll y eso haría parpadear el fondo.
       var temporizador;
       window.addEventListener('resize', function () {
+        if (window.innerWidth === anchoDibujado) return;
         clearTimeout(temporizador);
         temporizador = setTimeout(dibujar, 150);
       });
       dibujar();
 
-      // Brasas flotando (se omiten si la persona prefiere menos movimiento)
+      /* ---------- Brasas ---------- */
       var reducir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (!reducir) {
         var contenedor = document.getElementById('brasas');
@@ -251,32 +345,60 @@
           contenedor.appendChild(brasa);
         }
       }
+
+      /* ---------- Menú: marca la sección visible ---------- */
+      var enlaces = document.querySelectorAll('.nav nav a');
+      var secciones = [];
+      enlaces.forEach(function (a) {
+        var s = document.querySelector(a.getAttribute('href'));
+        if (s) secciones.push({ enlace: a, seccion: s });
+      });
+
+      function marcarActivo() {
+        var linea = window.innerHeight * 0.35;
+        var actual = null;
+        secciones.forEach(function (par) {
+          if (par.seccion.getBoundingClientRect().top <= linea) actual = par.enlace;
+        });
+        enlaces.forEach(function (a) {
+          if (a === actual) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      }
+      window.addEventListener('scroll', marcarActivo, { passive: true });
+      marcarActivo();
+
+      /* ---------- Correo: no aparece escrito en el HTML ---------- */
+      var correo = ['duartedigital', 'icloud.com'].join('@');
+      var item = document.getElementById('item-correo');
+      var estado = document.getElementById('estado');
+
+      var enlaceCorreo = document.createElement('a');
+      enlaceCorreo.href = 'mailto:' + correo + '?subject=Contacto%20desde%20web';
+      enlaceCorreo.textContent = 'Correo electrónico';
+
+      var boton = document.createElement('button');
+      boton.type = 'button';
+      boton.className = 'copiar';
+      boton.textContent = 'Copiar dirección';
+      boton.addEventListener('click', function () {
+        function avisar(texto) {
+          estado.textContent = texto;
+          setTimeout(function () { estado.textContent = ''; }, 3000);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(correo).then(
+            function () { avisar('Dirección copiada.'); },
+            function () { avisar('Mi correo es ' + correo); }
+          );
+        } else {
+          avisar('Mi correo es ' + correo);
+        }
+      });
+
+      item.appendChild(enlaceCorreo);
+      item.appendChild(boton);
     })();
   </script>
 </body>
 </html>
-		</div>
-		<div class="sc-footer-text">
-			<p> STAFF de Supercraft | Duarte</p>
-		</div>
-	</footer>
-</body>
-<script>
-// Animación de aparición al hacer scroll
-const fadeEls = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver((entries) => {
-	entries.forEach(entry => {
-		if (entry.isIntersecting) {
-			entry.target.classList.add('visible');
-		}
-	});
-}, { threshold: 0.15 });
-fadeEls.forEach(el => observer.observe(el));
-</script>
-</html>
-```
-
-
-
-
-
