@@ -4,12 +4,25 @@
   var status = document.getElementById('mensaje-estado');
   var button = document.getElementById('mensaje-boton');
 
+  function text(message) {
+    return window.SitePreferences ? window.SitePreferences.text(message) : message;
+  }
+
+  function setStatus(message) {
+    status.dataset.message = message;
+    status.textContent = text(message);
+  }
+
+  document.addEventListener('site-language-change', function () {
+    if (status && status.dataset.message) status.textContent = text(status.dataset.message);
+  });
+
   if (!config || !config.url || !config.anonKey || !window.supabase) {
     if (button) button.disabled = true;
     if (status) {
-      status.textContent = config && config.url && config.anonKey
+      setStatus(config && config.url && config.anonKey
         ? 'No se pudo cargar el servicio de mensajes. Inténtalo más tarde.'
-        : 'El formulario estará disponible pronto.';
+        : 'El formulario estará disponible pronto.');
       status.dataset.error = 'true';
     }
     if (config && config.url && config.anonKey && !window.supabase) {
@@ -73,23 +86,23 @@
     var code = error && error.code ? error.code : '';
 
     if (message.indexOf('RATE_LIMITED') !== -1) {
-      return 'Espera un minuto antes de enviar otro mensaje.';
+      return text('Espera un minuto antes de enviar otro mensaje.');
     }
     if (message.indexOf('INVALID_MESSAGE') !== -1) {
-      return 'Escribe un mensaje de hasta 2000 caracteres.';
+      return text('Escribe un mensaje de hasta 2000 caracteres.');
     }
     if (code === 'PGRST202' || code === '42883') {
-      return 'El servicio de mensajes necesita configuración. Avísame por correo para revisarlo.';
+      return text('El servicio de mensajes necesita configuración. Avísame por correo para revisarlo.');
     }
     if (code === '42501' || code === '401' || code === '403') {
-      return 'El servicio rechazó el mensaje. Avísame por correo para revisarlo.';
+      return text('El servicio rechazó el mensaje. Avísame por correo para revisarlo.');
     }
-    return 'No se pudo enviar. Inténtalo de nuevo o escríbeme por correo.';
+    return text('No se pudo enviar. Inténtalo de nuevo o escríbeme por correo.');
   }
 
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
-    status.textContent = 'Enviando…';
+    setStatus('Enviando…');
     delete status.dataset.error;
     delete status.dataset.success;
     button.disabled = true;
@@ -111,11 +124,11 @@
       }
 
       form.reset();
-      status.textContent = '¡Mensaje enviado! Gracias por escribirme.';
+      setStatus('¡Mensaje enviado! Gracias por escribirme.');
       status.dataset.success = 'true';
     } catch (error) {
       console.error('Falló el envío del mensaje:', error);
-      status.textContent = 'No se pudo enviar. Comprueba tu conexión e inténtalo de nuevo.';
+      setStatus('No se pudo enviar. Comprueba tu conexión e inténtalo de nuevo.');
       status.dataset.error = 'true';
     } finally {
       button.disabled = false;

@@ -1,7 +1,7 @@
 :root {
   color-scheme: dark;
-  --bg: #081324;
-  --panel: #0d1d32;
+  --bg: #050a12;
+  --panel: #0b1424;
   --text: #f1f6ff;
   --soft: #c3d2e7;
   --muted: #91a7c2;
@@ -97,8 +97,8 @@ input { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius
   isolation: isolate;
   overflow-x: hidden;
   background:
-    radial-gradient(ellipse at 85% 4%, rgba(76, 145, 242, 0.16), transparent 33%),
-    linear-gradient(155deg, #081324, #0b1c35 58%, #081324);
+    radial-gradient(ellipse at 85% 4%, rgba(48, 113, 211, 0.2), transparent 33%),
+    linear-gradient(155deg, #050a12, #09172b 58%, #050a12);
 }
 
 .dashboard-page::before,
@@ -192,8 +192,8 @@ input { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius
 
 .dashboard-page .metrica:hover { transform: translateY(-4px); border-color: rgba(120, 183, 255, 0.36); }
 .dashboard-page .metrica strong { text-shadow: 0 0 32px rgba(120, 183, 255, 0.17); }
-.dashboard-page .bloque { padding: 28px; border: 1px solid var(--line); border-radius: 12px; background: rgba(8, 25, 30, 0.68); }
-.dashboard-page .mensaje { border-radius: 9px; background: rgba(12, 32, 36, 0.82); }
+.dashboard-page .bloque { padding: 28px; border: 1px solid var(--line); border-radius: 12px; background: rgba(8, 18, 34, 0.76); }
+.dashboard-page .mensaje { border-radius: 9px; background: rgba(9, 20, 37, 0.88); }
 .dashboard-page .mensaje-acciones button { transition: border-color 0.2s ease, color 0.2s ease; }
 
 @media (max-width: 680px) {
@@ -207,3 +207,46 @@ input { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius
   .dashboard-page .boton,
   .dashboard-page .boton-secundario { transition: none; }
 }
+
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4f7fc;
+  --panel: #ffffff;
+  --text: #12213a;
+  --soft: #314560;
+  --muted: #526984;
+  --accent: #1768c4;
+  --line: rgba(24, 51, 84, 0.16);
+}
+
+html[data-theme="light"] .dashboard-page {
+  background:
+    radial-gradient(ellipse at 85% 4%, rgba(133, 190, 255, 0.32), transparent 33%),
+    linear-gradient(155deg, #f4f8ff, #e9f2ff 58%, #f9f7ff);
+}
+
+html[data-theme="light"] .dashboard-page::before {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 47px, rgba(23, 104, 196, 0.045) 48px),
+    repeating-linear-gradient(90deg, transparent 0 47px, rgba(23, 104, 196, 0.045) 48px);
+}
+
+html[data-theme="light"] .dashboard-page .acceso,
+html[data-theme="light"] .dashboard-page .bloque,
+html[data-theme="light"] .dashboard-page .mensaje {
+  border-color: rgba(23, 104, 196, 0.17);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 18px 50px rgba(30, 67, 115, 0.08);
+}
+
+html[data-theme="light"] .dashboard-page .metrica {
+  border-color: rgba(23, 104, 196, 0.18);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(229, 240, 255, 0.94));
+}
+
+html[data-theme="light"] .dashboard-page input {
+  border-color: rgba(24, 51, 84, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+html[data-theme="light"] .dashboard-page .boton { color: #fff; }

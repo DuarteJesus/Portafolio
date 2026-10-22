@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Duarte | Moderador de SuperCraft</title>
-  <meta name="description" content="Perfil de Duarte, moderador del staff de SuperCraft desde abril de 2026.">
+  <title>Duarte Jesús Alzamora Castro | Moderador de SuperCraft</title>
+  <meta name="description" content="Perfil de Duarte Jesús Alzamora Castro, moderador del staff de SuperCraft desde abril de 2026.">
   <link rel="canonical" href="https://duartedev.lat/staff/">
   <meta name="theme-color" content="#081324">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://duartedev.lat/staff/">
   <meta property="og:site_name" content="Duarte · Staff de SuperCraft">
-  <meta property="og:title" content="Duarte | Moderador de SuperCraft">
-  <meta property="og:description" content="Perfil de Duarte, moderador del staff de SuperCraft desde abril de 2026.">
+  <meta property="og:title" content="Duarte Jesús Alzamora Castro | Moderador de SuperCraft">
+  <meta property="og:description" content="Perfil de Duarte Jesús Alzamora Castro, moderador del staff de SuperCraft desde abril de 2026.">
+  <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale" content="es_CO">
   <meta property="og:image" content="https://duartedev.lat/staff/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -23,15 +24,19 @@
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23081324'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%2378b7ff'/%3E%3C/svg%3E">
 
+  <script src="../site-preferences.js"></script>
+
   <link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../fonts.css?v=20261022-blue-3">
-  <link rel="stylesheet" href="style.css?v=20261022-blue-3">
+  <link rel="stylesheet" href="style.css?v=20261022-blue-4">
+  <link rel="stylesheet" href="../site-preferences.css?v=20261022-1">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Duarte",
+    "name": "Duarte Jesús Alzamora Castro",
+    "alternateName": ["Duarte Jesús", "Duarte"],
     "url": "https://duartedev.lat/staff/",
     "jobTitle": "Moderador",
     "affiliation": { "@type": "Organization", "name": "SuperCraft", "url": "https://supercraft.es" },
@@ -311,8 +316,12 @@
       if (botonDiscord) {
         botonDiscord.addEventListener('click', function () {
           function avisar(texto) {
-            estado.textContent = texto;
-            setTimeout(function () { estado.textContent = ''; }, 3000);
+            estado.dataset.message = texto;
+            estado.textContent = window.SitePreferences ? window.SitePreferences.text(texto) : texto;
+            setTimeout(function () {
+              estado.textContent = '';
+              delete estado.dataset.message;
+            }, 3000);
           }
           if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText('Duaartee_').then(
@@ -324,6 +333,11 @@
           }
         });
       }
+      document.addEventListener('site-language-change', function () {
+        if (estado && estado.dataset.message && window.SitePreferences) {
+          estado.textContent = window.SitePreferences.text(estado.dataset.message);
+        }
+      });
     })();
   </script>
 </body>

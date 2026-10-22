@@ -9,11 +9,16 @@
   var signOutButton = document.getElementById('cerrar-sesion');
   var refreshButton = document.getElementById('actualizar');
   var messagesNode = document.getElementById('mensajes');
+  var latestMessages = [];
+
+  function text(message) {
+    return window.SitePreferences ? window.SitePreferences.text(message) : message;
+  }
 
   if (!config || !config.url || !config.anonKey || !window.supabase) {
     loginStatus.textContent = config && config.url && config.anonKey
-      ? 'No se pudo cargar el servicio de acceso. Inténtalo más tarde.'
-      : 'La dashboard estará disponible cuando se conecte Supabase.';
+      ? text('No se pudo cargar el servicio de acceso. Inténtalo más tarde.')
+      : text('La dashboard estará disponible cuando se conecte Supabase.');
     loginStatus.dataset.error = 'true';
     loginButton.disabled = true;
     if (config && config.url && config.anonKey && !window.supabase) {
@@ -27,7 +32,8 @@
   var presenceChannel;
 
   function showStatus(node, message, isError) {
-    node.textContent = message;
+    node.dataset.message = message;
+    node.textContent = text(message);
     if (isError) node.dataset.error = 'true';
     else delete node.dataset.error;
   }
@@ -45,7 +51,7 @@
   }
 
   function formatNumber(value) {
-    return Number(value || 0).toLocaleString('es-CO');
+    return Number(value || 0).toLocaleString(window.SitePreferences && window.SitePreferences.getLanguage() === 'en' ? 'en-US' : 'es-CO');
   }
 
   async function refreshStats() {
@@ -79,6 +85,7 @@
   }
 
   function renderMessages(messages) {
+    latestMessages = messages;
     messagesNode.replaceChildren();
     document.getElementById('mensajes-contador').textContent = formatNumber(messages.filter(function (message) {
       return !message.is_read;
@@ -87,7 +94,7 @@
     if (messages.length === 0) {
       var empty = document.createElement('p');
       empty.className = 'vacio';
-      empty.textContent = 'Todavía no hay mensajes.';
+      empty.textContent = text('Todavía no hay mensajes.');
       messagesNode.appendChild(empty);
       return;
     }
@@ -101,11 +108,11 @@
       header.className = 'mensaje-cabecera';
       var name = document.createElement('span');
       name.className = 'mensaje-nombre';
-      name.textContent = message.name || 'Sin nombre';
+      name.textContent = message.name || text('Sin nombre');
       var date = document.createElement('time');
       date.className = 'mensaje-fecha';
       date.dateTime = message.created_at;
-      date.textContent = new Date(message.created_at).toLocaleString('es-CO');
+      date.textContent = new Date(message.created_at).toLocaleString(window.SitePreferences && window.SitePreferences.getLanguage() === 'en' ? 'en-US' : 'es-CO');
       header.append(name, date);
 
       var body = document.createElement('p');
@@ -119,7 +126,7 @@
         var markRead = document.createElement('button');
         markRead.className = 'boton-secundario';
         markRead.type = 'button';
-        markRead.textContent = 'Marcar como leído';
+        markRead.textContent = text('Marcar como leído');
         markRead.addEventListener('click', function () {
           updateMessage(message.id, { is_read: true });
         });
@@ -129,9 +136,9 @@
       var remove = document.createElement('button');
       remove.className = 'boton-secundario';
       remove.type = 'button';
-      remove.textContent = 'Eliminar';
+      remove.textContent = text('Eliminar');
       remove.addEventListener('click', function () {
-        if (window.confirm('¿Eliminar este mensaje? Esta acción no se puede deshacer.')) {
+        if (window.confirm(text('¿Eliminar este mensaje? Esta acción no se puede deshacer.'))) {
           deleteMessage(message.id);
         }
       });
@@ -209,6 +216,13 @@
     presenceChannel = null;
     messageChannel = null;
   }
+
+  document.addEventListener('site-language-change', function () {
+    renderMessages(latestMessages);
+    [loginStatus, dashboardStatus].forEach(function (node) {
+      if (node.dataset.message) node.textContent = text(node.dataset.message);
+    });
+  });
 
   loginForm.addEventListener('submit', async function (event) {
     event.preventDefault();
