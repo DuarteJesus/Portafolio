@@ -66,7 +66,7 @@ try {
   }
   $uri = "https://discord.com/api/v10/applications/$applicationId/guilds/$guildId/commands"
   $body = ConvertTo-Json -InputObject $commands -Depth 10
-  $registered = Invoke-RestMethod -Method Put -Uri $uri -Headers $headers -Body $body
+  $registered = Invoke-RestMethod -Method Put -Uri $uri -Headers $headers -Body $body -UserAgent 'DiscordBot (https://duartedev.lat, 1.0)'
   Write-Output ("Comandos registrados: " + (($registered | ForEach-Object { '/' + $_.name }) -join ', '))
 }
 finally {
