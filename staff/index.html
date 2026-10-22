@@ -6,7 +6,7 @@
   <title>Duarte | Moderador de SuperCraft</title>
   <meta name="description" content="Perfil de Duarte, moderador del staff de SuperCraft desde abril de 2026.">
   <link rel="canonical" href="https://duartedev.lat/staff/">
-  <meta name="theme-color" content="#060b14">
+  <meta name="theme-color" content="#081324">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://duartedev.lat/staff/">
@@ -21,9 +21,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://duartedev.lat/staff/og-image.png">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23060b14'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%233ddc97'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23081324'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%2378b7ff'/%3E%3C/svg%3E">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../fonts.css?v=20261022-blue-3">
+  <link rel="stylesheet" href="style.css?v=20261022-blue-3">
 
   <script type="application/ld+json">
   {
@@ -159,7 +161,7 @@
   <script>
     (function () {
       /* ---------- Paisaje pixelado (noche azulada) ---------- */
-      var PX = 5;
+      var PX = 4;
       var canvas = document.getElementById('fondo');
       var ctx = canvas.getContext('2d');
 
@@ -194,16 +196,16 @@
         var rand = prng(4242);
 
         var cielo = ctx.createLinearGradient(0, 0, 0, h);
-        cielo.addColorStop(0, '#040810');
-        cielo.addColorStop(0.5, '#0b2540');
-        cielo.addColorStop(0.72, '#14506a');
-        cielo.addColorStop(0.84, '#2f8f7a');
+        cielo.addColorStop(0, '#040914');
+        cielo.addColorStop(0.5, '#0a2144');
+        cielo.addColorStop(0.72, '#154c83');
+        cielo.addColorStop(0.84, '#2679a2');
         ctx.fillStyle = cielo;
         ctx.fillRect(0, 0, w, h);
 
         var lx = Math.floor(w * 0.2), ly = Math.floor(h * 0.28);
         var brillo = ctx.createRadialGradient(lx, ly, 2, lx, ly, Math.max(w, h) * 0.35);
-        brillo.addColorStop(0, 'rgba(140,220,255,0.28)');
+        brillo.addColorStop(0, 'rgba(117,183,255,0.32)');
         brillo.addColorStop(1, 'rgba(140,220,255,0)');
         ctx.fillStyle = brillo;
         ctx.fillRect(0, 0, w, h);
@@ -221,9 +223,9 @@
         ctx.fillRect(lx + 1, ly + 1, 2, 2);
 
         var capas = [
-          { base: 0.64, color: '#0f2a3d', borde: '#1f4a63', amp: 3 },
-          { base: 0.74, color: '#0a1d2c', borde: '#173649', amp: 3 },
-          { base: 0.86, color: '#06121d', borde: '#0f2535', amp: 2 }
+          { base: 0.64, color: '#0e2948', borde: '#1e4771', amp: 3 },
+          { base: 0.74, color: '#091d35', borde: '#173558', amp: 3 },
+          { base: 0.86, color: '#061224', borde: '#102641', amp: 2 }
         ];
         var antorchas = [];
         capas.forEach(function (capa, n) {
@@ -249,13 +251,13 @@
 
         antorchas.forEach(function (f) {
           var g = ctx.createRadialGradient(f.x + 2, f.y - 3, 1, f.x + 2, f.y - 3, 14);
-          g.addColorStop(0, 'rgba(255,170,60,0.45)');
-          g.addColorStop(1, 'rgba(255,170,60,0)');
+          g.addColorStop(0, 'rgba(92,174,255,0.46)');
+          g.addColorStop(1, 'rgba(92,174,255,0)');
           ctx.fillStyle = g;
           ctx.fillRect(f.x - 14, f.y - 18, 32, 32);
-          ctx.fillStyle = '#ffb347';
+          ctx.fillStyle = '#78b7ff';
           ctx.fillRect(f.x, f.y - 5, 5, 5);
-          ctx.fillStyle = '#ffe3a3';
+          ctx.fillStyle = '#d8edff';
           ctx.fillRect(f.x + 1, f.y - 4, 3, 2);
         });
       }
