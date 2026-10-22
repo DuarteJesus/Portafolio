@@ -44,9 +44,8 @@
 </head>
 <body>
   <a class="saltar" href="#contenido">Saltar al contenido</a>
-  <canvas id="fondo" aria-hidden="true"></canvas>
+  <div class="fondo-aurora" aria-hidden="true"></div>
   <div class="velo" aria-hidden="true"></div>
-  <div id="brillos" aria-hidden="true"></div>
 
   <header class="nav">
     <a class="logo" href="#inicio" aria-label="Duarte Jesús, inicio"><span class="logo-marca">D</span> DUARTE JESÚS</a>
@@ -188,10 +187,21 @@
           <h2 id="contacto-titulo">El siguiente<br>mensaje puede<br>ser tuyo<span class="acento">.</span></h2>
         </div>
         <div class="contacto-links">
-          <div class="correo-fila">
-            <span>CORREO ELECTRÓNICO</span>
-            <div id="item-correo"><noscript>Activa JavaScript para ver mi correo.</noscript></div>
-          </div>
+          <form class="mensaje-form" id="mensaje-form">
+            <label for="mensaje-nombre">Tu nombre <span>(opcional)</span></label>
+            <input id="mensaje-nombre" name="name" type="text" maxlength="60" autocomplete="name" placeholder="¿Cómo te llamas?">
+            <label for="mensaje-contenido">Tu mensaje</label>
+            <textarea id="mensaje-contenido" name="message" rows="5" maxlength="2000" required placeholder="Escribe aquí lo que quieras contarme…"></textarea>
+            <div class="campo-trampa" aria-hidden="true">
+              <label for="mensaje-web">Deja este campo vacío</label>
+              <input id="mensaje-web" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="mensaje-enviar">
+              <button class="boton" id="mensaje-boton" type="submit">Enviar mensaje <span aria-hidden="true">↗</span></button>
+              <p id="mensaje-estado" role="status" aria-live="polite">No necesitas correo ni cuenta.</p>
+            </div>
+          </form>
+          <p class="correo-alternativo">¿Prefieres el correo? <a href="mailto:duartedigital@icloud.com">duartedigital@icloud.com <span aria-hidden="true">↗</span></a></p>
           <div class="redes-fila">
             <span>ENCUÉNTRAME TAMBIÉN EN</span>
             <ul>
@@ -215,104 +225,7 @@
 
   <script>
     (function () {
-      var canvas = document.getElementById('fondo');
-      var ctx = canvas.getContext('2d');
-      var pixel = 5;
-      var anchoDibujado = 0;
-
-      function prng(seed) {
-        return function () {
-          seed |= 0;
-          seed = seed + 0x6D2B79F5 | 0;
-          var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
-          t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
-          return ((t ^ t >>> 14) >>> 0) / 4294967296;
-        };
-      }
-
-      function relieve(rand, width, base, amp) {
-        var heights = new Array(width);
-        var y = base;
-        for (var x = 0; x < width; x += 5) {
-          y += Math.round((rand() - 0.5) * amp);
-          y = Math.max(base - amp * 3, Math.min(base + amp * 3, y));
-          for (var i = 0; i < 5 && x + i < width; i++) heights[x + i] = y;
-        }
-        return heights;
-      }
-
-      function dibujar() {
-        anchoDibujado = window.innerWidth;
-        var w = Math.ceil(window.innerWidth / pixel);
-        var h = Math.ceil(window.innerHeight * 1.15 / pixel);
-        canvas.width = w;
-        canvas.height = h;
-        var rand = prng(2026);
-        var cielo = ctx.createLinearGradient(0, 0, 0, h);
-        cielo.addColorStop(0, '#07151a');
-        cielo.addColorStop(0.52, '#10343a');
-        cielo.addColorStop(0.76, '#27605a');
-        cielo.addColorStop(1, '#43836b');
-        ctx.fillStyle = cielo;
-        ctx.fillRect(0, 0, w, h);
-
-        var lx = Math.floor(w * 0.78);
-        var ly = Math.floor(h * 0.32);
-        var brillo = ctx.createRadialGradient(lx, ly, 2, lx, ly, Math.max(w, h) * 0.34);
-        brillo.addColorStop(0, 'rgba(183,243,107,0.18)');
-        brillo.addColorStop(1, 'rgba(183,243,107,0)');
-        ctx.fillStyle = brillo;
-        ctx.fillRect(0, 0, w, h);
-
-        for (var star = 0; star < 100; star++) {
-          var sx = Math.floor(rand() * w);
-          var sy = Math.floor(rand() * h * 0.58);
-          ctx.fillStyle = 'rgba(224,255,229,' + (0.2 + rand() * 0.55).toFixed(2) + ')';
-          ctx.fillRect(sx, sy, 1, 1);
-        }
-
-        ctx.fillStyle = '#d4fa9a';
-        ctx.fillRect(lx - 4, ly - 4, 9, 9);
-        ctx.fillStyle = '#a5d97c';
-        ctx.fillRect(lx - 2, ly - 2, 3, 3);
-
-        var capas = [
-          { base: 0.67, color: '#163e3e', borde: '#2a5950', amp: 3 },
-          { base: 0.77, color: '#102e31', borde: '#1c4540', amp: 3 },
-          { base: 0.88, color: '#091d22', borde: '#153136', amp: 2 }
-        ];
-        capas.forEach(function (capa) {
-          var alturas = relieve(rand, w, Math.floor(h * capa.base), capa.amp);
-          for (var x = 0; x < w; x++) {
-            var y = alturas[x];
-            ctx.fillStyle = capa.color;
-            ctx.fillRect(x, y, 1, h - y);
-            ctx.fillStyle = capa.borde;
-            ctx.fillRect(x, y, 1, 1);
-          }
-        });
-      }
-
-      var temporizador;
-      window.addEventListener('resize', function () {
-        if (window.innerWidth === anchoDibujado) return;
-        clearTimeout(temporizador);
-        temporizador = setTimeout(dibujar, 150);
-      });
-      dibujar();
-
       var reducir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!reducir) {
-        var contenedor = document.getElementById('brillos');
-        for (var i = 0; i < 16; i++) {
-          var brillo = document.createElement('span');
-          brillo.style.left = (Math.random() * 100) + '%';
-          brillo.style.animationDuration = (10 + Math.random() * 12) + 's';
-          brillo.style.animationDelay = (-Math.random() * 20) + 's';
-          contenedor.appendChild(brillo);
-        }
-      }
-
       var linksNav = document.querySelectorAll('.nav nav a');
       var seccionesNav = [];
       linksNav.forEach(function (link) {
@@ -341,39 +254,15 @@
             entrada.target.classList.add('visible');
             observer.unobserve(entrada.target);
           });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px'         });
         elementosAnimados.forEach(function (elemento) {
           observador.observe(elemento);
         });
       }
-
-      var correo = ['duartedigital', 'icloud.com'].join('@');
-      var item = document.getElementById('item-correo');
-      var estado = document.getElementById('estado');
-      var enlaceCorreo = document.createElement('a');
-      enlaceCorreo.href = 'mailto:' + correo + '?subject=Contacto%20desde%20web';
-      enlaceCorreo.textContent = 'Escríbeme';
-      var botonCopiar = document.createElement('button');
-      botonCopiar.type = 'button';
-      botonCopiar.className = 'copiar';
-      botonCopiar.textContent = 'Copiar correo';
-      botonCopiar.addEventListener('click', function () {
-        function avisar(texto) {
-          estado.textContent = texto;
-          setTimeout(function () { estado.textContent = ''; }, 3000);
-        }
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(correo).then(
-            function () { avisar('Dirección copiada.'); },
-            function () { avisar('Mi correo es ' + correo); }
-          );
-        } else {
-          avisar('Mi correo es ' + correo);
-        }
-      });
-      item.appendChild(enlaceCorreo);
-      item.appendChild(botonCopiar);
     })();
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="site-backend.js"></script>
 </body>
 </html>

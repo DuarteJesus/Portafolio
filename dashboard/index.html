@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#07151a">
+  <title>Dashboard privada | Duarte</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <main class="panel">
+    <header class="panel-cabecera">
+      <a class="marca" href="../"><span>D</span> DUARTE / DASHBOARD</a>
+      <button class="boton-secundario oculto" id="cerrar-sesion" type="button">Cerrar sesión</button>
+    </header>
+
+    <section class="acceso" id="acceso">
+      <p class="eyebrow">PANEL PRIVADO</p>
+      <h1>Hola, Duarte.</h1>
+      <p class="explicacion">Inicia sesión con el correo autorizado. Te enviaré un enlace de acceso; no necesitas contraseña.</p>
+      <form id="login-form">
+        <label for="login-email">Tu correo</label>
+        <input id="login-email" name="email" type="email" autocomplete="email" required>
+        <button class="boton" type="submit">Enviar enlace de acceso</button>
+      </form>
+      <p class="estado" id="login-estado" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="contenido oculto" id="dashboard" aria-labelledby="titulo-dashboard">
+      <div class="titulo-fila">
+        <div><p class="eyebrow">RESUMEN DEL SITIO</p><h1 id="titulo-dashboard">Actividad</h1></div>
+        <button class="boton-secundario" id="actualizar" type="button">Actualizar</button>
+      </div>
+
+      <div class="metricas">
+        <article class="metrica"><span class="metrica-etiqueta">VISITANTES AHORA</span><strong id="visitas-ahora">—</strong><span class="metrica-ayuda">Sesiones activas en tiempo real</span></article>
+        <article class="metrica"><span class="metrica-etiqueta">VISTAS TOTALES</span><strong id="vistas-totales">—</strong><span class="metrica-ayuda">Desde que se active el contador</span></article>
+        <article class="metrica"><span class="metrica-etiqueta">SESIONES ANÓNIMAS</span><strong id="sesiones-totales">—</strong><span class="metrica-ayuda">Estimación por pestaña y día</span></article>
+      </div>
+
+      <section class="bloque">
+        <div class="bloque-cabecera"><div><p class="eyebrow">MENSAJES</p><h2>Buzón</h2></div><span id="mensajes-contador" class="contador">0</span></div>
+        <p class="nota">Los nombres son opcionales. No se pide ni se almacena el correo de quien escribe.</p>
+        <div class="mensajes" id="mensajes"><p class="vacio">Cargando mensajes…</p></div>
+      </section>
+
+      <p class="nota privacidad">Las métricas no incluyen nombres ni direcciones IP. Las sesiones se cuentan de forma aproximada; no representan personas identificadas.</p>
+      <p class="estado" id="dashboard-estado" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-config.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
