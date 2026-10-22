@@ -5,22 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Página no encontrada | Duarte</title>
   <meta name="robots" content="noindex">
+  <meta name="description" content="La página que buscas no está disponible. Vuelve al portafolio o explora los proyectos de Duarte.">
   <meta name="theme-color" content="#07051a">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230b0814'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%23ff7a1a'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="/style.css">
 </head>
-<body class="simple">
+<body class="simple not-found">
   <header class="nav">
     <a class="logo" href="/">Duarte</a>
   </header>
 
-  <main class="tarjeta">
+  <main class="tarjeta error-tarjeta" aria-labelledby="error-titulo">
     <div class="contenido">
-      <h1>Página no encontrada</h1>
-      <p>La dirección que buscas no existe o cambió de lugar.</p>
-      <div class="acciones">
-        <a class="boton" href="/">Volver al inicio</a>
-      </div>
+      <p class="error-etiqueta"><span aria-hidden="true"></span> RUTA FUERA DE MAPA</p>
+      <p class="error-codigo" aria-hidden="true">404</p>
+      <h1 id="error-titulo">No encontramos esa página.</h1>
+      <p>La dirección que buscas no existe o cambió de lugar. Puedes volver al portafolio o seguir explorando.</p>
+      <nav class="error-acciones" aria-label="Opciones de navegación">
+        <a class="boton" href="/">Volver al inicio <span aria-hidden="true">↗</span></a>
+        <a class="error-enlace" href="/#proyectos">Explorar proyectos <span aria-hidden="true">↗</span></a>
+        <a class="error-enlace" href="/staff/">Perfil de staff <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
   </main>
 </body>

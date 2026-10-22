@@ -68,6 +68,25 @@
 
   if (!form || !status || !button) return;
 
+  function messageErrorText(error) {
+    var message = error && error.message ? error.message : '';
+    var code = error && error.code ? error.code : '';
+
+    if (message.indexOf('RATE_LIMITED') !== -1) {
+      return 'Espera un minuto antes de enviar otro mensaje.';
+    }
+    if (message.indexOf('INVALID_MESSAGE') !== -1) {
+      return 'Escribe un mensaje de hasta 2000 caracteres.';
+    }
+    if (code === 'PGRST202' || code === '42883') {
+      return 'El servicio de mensajes necesita configuración. Avísame por correo para revisarlo.';
+    }
+    if (code === '42501' || code === '401' || code === '403') {
+      return 'El servicio rechazó el mensaje. Avísame por correo para revisarlo.';
+    }
+    return 'No se pudo enviar. Inténtalo de nuevo o escríbeme por correo.';
+  }
+
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
     status.textContent = 'Enviando…';
@@ -81,14 +100,12 @@
         p_session_id: sessionId,
         p_name: values.get('name') || null,
         p_message: values.get('message'),
-        p_website: values.get('website') || ''
+        p_website: document.getElementById('mensaje-web').value
       });
 
       if (result.error) {
         console.error('No se pudo enviar el mensaje:', result.error.message);
-        status.textContent = result.error.message.indexOf('RATE_LIMITED') !== -1
-          ? 'Espera un minuto antes de enviar otro mensaje.'
-          : 'No se pudo enviar. Inténtalo de nuevo más tarde.';
+        status.textContent = messageErrorText(result.error);
         status.dataset.error = 'true';
         return;
       }
