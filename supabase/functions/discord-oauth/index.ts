@@ -200,7 +200,7 @@ async function callback(request: Request): Promise<Response> {
   if (
     secret.length < 32 ||
     !/^[\da-f-]{36}$/i.test(stateFromUrl) ||
-    !stateFromCookie ||
+    !stateFromCookie
   ) {
     return htmlResponse("No se pudo verificar la sesión", "Vuelve al sitio e inicia el proceso otra vez.", 400);
   }
