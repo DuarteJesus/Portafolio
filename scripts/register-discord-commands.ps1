@@ -1,21 +1,19 @@
 $ErrorActionPreference = 'Stop'
 
-$required = @('DISCORD_BOT_TOKEN', 'DISCORD_APPLICATION_ID', 'DISCORD_GUILD_ID')
-foreach ($name in $required) {
-  if ([string]::IsNullOrWhiteSpace([Environment]::GetEnvironmentVariable($name))) {
-    throw "Define la variable de entorno $name antes de registrar los comandos."
+$secureToken = Read-Host 'Token del bot (la entrada no se mostrará)' -AsSecureString
+$token = [System.Net.NetworkCredential]::new('', $secureToken).Password
+$applicationId = Read-Host 'Application ID'
+$guildId = Read-Host 'ID del servidor'
+
+try {
+  if ([string]::IsNullOrWhiteSpace($token)) {
+    throw 'El token del bot no puede estar vacío.'
   }
-}
+  if ($applicationId -notmatch '^\d{17,20}$' -or $guildId -notmatch '^\d{17,20}$') {
+    throw 'El Application ID y el ID del servidor deben ser IDs numéricos válidos de Discord.'
+  }
 
-$applicationId = [Environment]::GetEnvironmentVariable('DISCORD_APPLICATION_ID')
-$guildId = [Environment]::GetEnvironmentVariable('DISCORD_GUILD_ID')
-$token = [Environment]::GetEnvironmentVariable('DISCORD_BOT_TOKEN')
-
-if ($applicationId -notmatch '^\d{17,20}$' -or $guildId -notmatch '^\d{17,20}$') {
-  throw 'DISCORD_APPLICATION_ID y DISCORD_GUILD_ID deben ser IDs numéricos válidos de Discord.'
-}
-
-$commands = @(
+  $commands = @(
   @{
     name = 'sitio'
     description = 'Enlaces al portafolio y sus páginas'
@@ -60,13 +58,20 @@ $commands = @(
       }
     )
   }
-)
+  )
 
-$headers = @{
-  Authorization = "Bot $token"
-  'Content-Type' = 'application/json'
+  $headers = @{
+    Authorization = "Bot $token"
+    'Content-Type' = 'application/json'
+  }
+  $uri = "https://discord.com/api/v10/applications/$applicationId/guilds/$guildId/commands"
+  $body = ConvertTo-Json -InputObject $commands -Depth 10
+  $registered = Invoke-RestMethod -Method Put -Uri $uri -Headers $headers -Body $body
+  Write-Output ("Comandos registrados: " + (($registered | ForEach-Object { '/' + $_.name }) -join ', '))
 }
-$uri = "https://discord.com/api/v10/applications/$applicationId/guilds/$guildId/commands"
-$body = ConvertTo-Json -InputObject $commands -Depth 10
-$registered = Invoke-RestMethod -Method Put -Uri $uri -Headers $headers -Body $body
-Write-Output ("Comandos registrados: " + (($registered | ForEach-Object { '/' + $_.name }) -join ', '))
+finally {
+  $token = $null
+  if ($secureToken) {
+    $secureToken.Dispose()
+  }
+}

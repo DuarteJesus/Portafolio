@@ -69,19 +69,10 @@ Después de desplegar `discord-interactions`, configura en el Discord Developer 
 
 ### 3. Registrar comandos
 
-En PowerShell, define temporalmente los IDs y escribe el token de forma oculta. El bloque lo elimina del entorno al terminar:
+Desde PowerShell, ejecuta el script. Te pedirá el token del bot con entrada oculta y los IDs de la aplicación y del servidor; no escribe ni guarda el token:
 
 ```powershell
-$secureToken = Read-Host 'Token del bot' -AsSecureString
-$env:DISCORD_BOT_TOKEN = [System.Net.NetworkCredential]::new('', $secureToken).Password
-$env:DISCORD_APPLICATION_ID = Read-Host 'Application ID'
-$env:DISCORD_GUILD_ID = Read-Host 'ID del servidor'
-try {
-  .\scripts\register-discord-commands.ps1
-} finally {
-  Remove-Item Env:DISCORD_BOT_TOKEN, Env:DISCORD_APPLICATION_ID, Env:DISCORD_GUILD_ID -ErrorAction SilentlyContinue
-  Remove-Variable secureToken -ErrorAction SilentlyContinue
-}
+.\scripts\register-discord-commands.ps1
 ```
 
 El script registra `/sitio` (enlaces a inicio, proyectos, perfil de staff y contacto), `/pregunta` (respuestas fijas basadas en el portafolio, sin IA externa) y `/ticket` (abre un canal privado). No guarda ni muestra el token. La web también tiene un formulario para abrir un ticket: exige iniciar sesión en Discord y pertenecer al servidor; después crea o abre el canal privado en Discord.
