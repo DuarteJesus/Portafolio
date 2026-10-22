@@ -1,0 +1,8 @@
+[functions.discord-interactions]
+verify_jwt = false
+
+[functions.discord-notify]
+verify_jwt = false
+
+[functions.discord-oauth]
+verify_jwt = false

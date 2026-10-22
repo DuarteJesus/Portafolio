@@ -197,7 +197,7 @@ end;
 $$;
 
 revoke all on function public.submit_message(uuid, text, text, text) from public, authenticated;
-grant execute on function public.submit_message(uuid, text, text, text) to anon;
+grant execute on function public.submit_message(uuid, text, text, text) to anon, authenticated;
 
 do $$
 begin

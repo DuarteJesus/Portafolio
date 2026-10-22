@@ -118,7 +118,7 @@
 
       if (result.error) {
         console.error('No se pudo enviar el mensaje:', result.error.message);
-        status.textContent = messageErrorText(result.error);
+        setStatus(messageErrorText(result.error));
         status.dataset.error = 'true';
         return;
       }

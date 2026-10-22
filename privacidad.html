@@ -7,7 +7,7 @@
   <meta name="description" content="Aviso de privacidad de este sitio: qué datos se recogen y cómo ejercer tus derechos.">
   <link rel="canonical" href="https://duartedev.lat/privacidad.html">
   <meta name="theme-color" content="#081324">
-  <script src="site-preferences.js"></script>
+  <script src="site-preferences.js?v=20261022-discord-1"></script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='4' fill='%23081324'/%3E%3Cpath d='M4 4h5a4 4 0 1 1 0 8H4zm3 2v4h2a2 2 0 1 0 0-4z' fill='%2378b7ff'/%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css?v=20261022-blue-3">
@@ -30,10 +30,11 @@
       <p>Este sitio es personal y lo administra Duarte, desde Colombia. Para cualquier consulta sobre tus datos, escríbeme desde la sección de contacto de mi portafolio: <a href="https://duartedev.lat/#contacto">duartedev.lat</a>.</p>
 
       <h2>Qué datos recojo</h2>
-      <p>El formulario permite enviar un mensaje sin correo ni cuenta. El nombre es opcional; no se solicita ni se almacena el correo de quien escribe. Los mensajes se guardan en Supabase hasta que Duarte los elimine desde la dashboard privada. La preferencia de idioma y tema se guarda solo en el almacenamiento local de tu navegador y no se envía al servidor.</p>
+      <p>El formulario permite enviar un mensaje sin correo ni cuenta. El nombre es opcional; no se solicita ni se almacena el correo de quien escribe. Los mensajes se guardan en Supabase y se envían al canal privado de soporte de Discord hasta que Duarte los elimine. La preferencia de idioma y tema se guarda solo en el almacenamiento local de tu navegador y no se envía al servidor.</p>
+      <p>Si abres un ticket desde la web, Discord te pedirá iniciar sesión y compartir tu identidad básica y tu pertenencia al servidor. La función usa esos datos solo para comprobar que eres miembro y crear un canal privado con tu ID de Discord y el asunto que escribiste. No guarda el token de acceso ni consulta tu correo. El canal y sus mensajes quedan sujetos a las políticas de Discord y son visibles para ti y el rol de soporte; cerrar un ticket restringe el envío de mensajes, pero no lo elimina. Puedes pedir que se elimine desde el contacto del portafolio.</p>
 
       <h2>Dónde está alojado</h2>
-      <p>El sitio se publica con GitHub Pages y usa Supabase para el formulario, la autenticación de la dashboard y las métricas agregadas. La biblioteca de Supabase se carga desde jsDelivr. GitHub, Supabase y jsDelivr pueden procesar datos técnicos de conexión según sus propias políticas; la aplicación no guarda direcciones IP, user agents ni referentes de visita.</p>
+      <p>El sitio se publica con GitHub Pages y usa Supabase para el formulario, la autenticación de la dashboard, las funciones del bot y las métricas agregadas. La integración de tickets utiliza la autenticación de Discord y envía los datos necesarios a Discord. La biblioteca de Supabase se carga desde jsDelivr. GitHub, Supabase, Discord y jsDelivr pueden procesar datos técnicos de conexión según sus propias políticas; la aplicación no guarda direcciones IP, user agents ni referentes de visita.</p>
 
       <h2>Métricas de visitas</h2>
       <p>Para contar vistas y sesiones activas se crea un identificador aleatorio temporal en el almacenamiento de sesión del navegador. No se usa para conocer tu identidad. Los identificadores de sesiones inactivas se eliminan cuando llega una nueva visita después de 30 días; los totales diarios agregados se conservan para mostrar el historial. El contador no recopila nombres, IP, user agents ni las páginas de referencia.</p>

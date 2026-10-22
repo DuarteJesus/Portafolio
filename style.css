@@ -612,6 +612,24 @@ button:focus-visible {
 #mensaje-estado { color: var(--apagado); font-size: 0.76rem; }
 #mensaje-estado[data-error="true"] { color: #ff9b87; }
 #mensaje-estado[data-success="true"] { color: var(--acento); }
+.ticket-form { padding: 18px 0; border-top: 1px solid var(--linea); }
+.ticket-form label { display: block; margin-bottom: 7px; color: var(--suave); font-size: 0.84rem; font-weight: 650; }
+.ticket-form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 11px 12px;
+  border: 1px solid var(--linea);
+  border-radius: 4px;
+  background: rgba(5, 12, 24, 0.82);
+  color: var(--texto);
+  font: inherit;
+  font-size: 0.88rem;
+}
+.ticket-form input:focus { border-color: var(--acento); outline: 1px solid var(--acento); }
+.ticket-form input::placeholder { color: #8297b3; }
+.ticket-form .boton { cursor: pointer; font-family: inherit; }
+.ticket-form > p { margin-top: 9px; color: var(--apagado); font-size: 0.74rem; }
 .correo-alternativo { margin: 0 0 16px; color: var(--apagado); font-size: 0.76rem; }
 .correo-alternativo a { color: var(--suave); text-underline-offset: 3px; }
 .correo-alternativo a span { color: var(--acento); }
@@ -805,6 +823,11 @@ html[data-theme="light"] .proyecto-principal {
 
 html[data-theme="light"] .mensaje-form input,
 html[data-theme="light"] .mensaje-form textarea {
+  border-color: rgba(24, 51, 84, 0.2);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+html[data-theme="light"] .ticket-form input {
   border-color: rgba(24, 51, 84, 0.2);
   background: rgba(255, 255, 255, 0.82);
 }
