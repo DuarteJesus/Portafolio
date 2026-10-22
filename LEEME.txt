@@ -1,2 +1,7 @@
-SUBE el contenido de esta carpeta (index.html, staff, dashboard, privacidad.html, 404.html, favicon.svg, og-image.png, robots.txt, sitemap.xml)
-a la RAIZ de tu hosting. Cada pagina ya incluye su CSS y JS: no hay carpetas css/ ni js/ que olvidar.
+Sube el contenido de esta carpeta a la raíz del sitio y conserva la estructura de carpetas.
+
+Incluye también theme.css, CNAME, assets, staff y dashboard, además de los archivos HTML, imágenes, favicon, robots.txt y sitemap.xml.
+
+El panel /dashboard/ conserva el inicio de sesión de Supabase y necesita dashboard/dashboard.css, dashboard/dashboard.js y supabase-config.js. No elimines esos archivos ni reemplaces el panel por una página pública.
+
+El sitio es estático y no necesita un paso de compilación.

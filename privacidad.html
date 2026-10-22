@@ -1,6 +1,6 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Privacidad · Duarte Jesús</title><meta name="description" content="Política de privacidad del portafolio de Duarte Jesús."><link rel="canonical" href="https://duartedev.lat/privacidad.html">
-<meta name="theme-color" content="#0b0c0a"><meta name="author" content="Duarte Jesús Alzamora Castro">
+<meta name="theme-color" content="#050505"><meta name="author" content="Duarte Jesús Alzamora Castro">
 <meta property="og:type" content="website"><meta property="og:locale" content="es_CO"><meta property="og:site_name" content="Duarte Jesús"><meta property="og:title" content="Privacidad · Duarte Jesús"><meta property="og:description" content="Política de privacidad del portafolio de Duarte Jesús."><meta property="og:url" content="https://duartedev.lat/privacidad.html"><meta property="og:image" content="https://duartedev.lat/og-image.png">
 <meta name="twitter:card" content="summary_large_image"><link rel="icon" href="favicon.svg" type="image/svg+xml"><style>:root{--bg:#0b0c0a;--card:#141612;--line:#262a22;--ink:#ecebe4;--mut:#8b8f82;--acc:#c8ff3d;--r:22px}
 @media(prefers-color-scheme:light){:root{--bg:#f4f3ec;--card:#fff;--line:#dedcd0;--ink:#15160f;--mut:#6b6e60;--acc:#4c8a00}}
@@ -46,7 +46,7 @@ input{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--li
 .prose{max-width:720px;padding-top:90px}.prose h3{margin:26px 0 6px}.prose p,.prose li{color:var(--mut)}.prose ul{padding-left:20px}
 .up{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.up span{color:var(--mut);font-size:13px}
 @media(max-width:520px){.nav{gap:0;padding:5px}.nav a{padding:8px 10px;font-size:12px}.nav .hm{display:none}}
-</style></head>
+</style><link rel="stylesheet" href="theme.css?v=20261022-monochrome-1"></head>
 <body data-page="privacy"><noscript><p style="padding:40px">Este sitio necesita JavaScript. Escríbeme a duartedigital@icloud.com</p></noscript><script>// ✏️ EDITA SOLO ESTE ARCHIVO: aquí va toda tu información.
 window.SITE = {
   name: "Duarte",
@@ -96,7 +96,7 @@ const S = window.SITE, $ = (s, r = document) => r.querySelector(s);
 const esc = t => String(t ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const page = document.body.dataset.page, B = document.body.dataset.base || "";
 const P = u => u && u.startsWith("/") ? (B || "./") + u.slice(1) : u;
-const links = [["#about", "Sobre mí", 1], ["#stack", "Stack", 1], ["#projects", "Proyectos", 1], ["#contact", "Contacto", 1], ["staff/", "Staff"], ["dashboard/", "Panel"]].map(([h, t]) => [(B || "./") + h, t]);
+const links = [["#inicio", "Inicio", 1], ["#about", "Sobre mí", 1], ["#stack", "Stack", 1], ["#projects", "Proyectos", 1], ["#contact", "Contacto", 1], ["staff/", "Staff"], ["dashboard/", "Panel"]].map(([h, t]) => [(B || "./") + h, t]);
 const card = (inner, cls = "", tag = "div", attrs = "") => `<${tag} class="card rv ${cls}" ${attrs}>${inner}</${tag}>`;
 const ext = u => /^https?:/.test(u) ? ' target="_blank" rel="noopener noreferrer"' : "";
 const views = {
