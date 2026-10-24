@@ -1,6 +1,8 @@
 Sube el contenido de esta carpeta a la raíz del sitio y conserva la estructura de carpetas.
 
-Incluye también theme.css, CNAME, assets, staff y dashboard, además de los archivos HTML, imágenes, favicon, robots.txt y sitemap.xml.
+Incluye también theme.css, discord-profile.js, CNAME, assets, staff y dashboard, además de los archivos HTML, imágenes, favicon, robots.txt y sitemap.xml.
+
+La tarjeta de Discord usa Lanyard para mostrar en vivo el perfil público, el estado, las actividades, la música y los dispositivos conectados. Configura discordBio en index.html y config.js con el texto «Acerca de mí» de Discord.
 
 El panel /dashboard/ conserva el inicio de sesión de Supabase y necesita dashboard/dashboard.css, dashboard/dashboard.js y supabase-config.js. No elimines esos archivos ni reemplaces el panel por una página pública.
 

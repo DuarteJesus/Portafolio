@@ -25,10 +25,12 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23081324'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%2378b7ff'/%3E%3C/svg%3E">
 
   <script src="../site-preferences.js?v=20261022-discord-1"></script>
+  <script src="../config.js" defer></script>
+  <script src="../discord-profile.js?v=20261023-5" defer></script>
 
   <link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../fonts.css?v=20261022-blue-3">
-  <link rel="stylesheet" href="style.css?v=20261022-monochrome-1">
+  <link rel="stylesheet" href="style.css?v=20261023-discord-1">
   <link rel="stylesheet" href="../site-preferences.css?v=20261022-1">
   <link rel="stylesheet" href="../theme.css?v=20261022-monochrome-1">
 
@@ -41,7 +43,7 @@
     "url": "https://duartedev.lat/staff/",
     "jobTitle": "Moderador",
     "affiliation": { "@type": "Organization", "name": "SuperCraft", "url": "https://supercraft.es" },
-    "sameAs": [ "https://duartedev.lat/", "https://github.com/DuarteJesus" ]
+    "sameAs": [ "https://github.com/DuarteJesus" ]
   }
   </script>
 </head>
@@ -55,8 +57,8 @@
     <nav aria-label="Principal">
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#experiencia">Experiencia</a>
+      <a href="#discord">Discord</a>
       <a href="#enlaces">Enlaces</a>
-      <a href="https://duartedev.lat/">Portafolio</a>
     </nav>
   </header>
 
@@ -66,7 +68,7 @@
     <p>Moderador de SuperCraft.</p>
     <div class="acciones">
       <a class="boton" href="#sobre-mi">Sobre mí</a>
-      <a class="boton secundario" href="https://duartedev.lat/">Ver mi portafolio</a>
+      <a class="boton secundario" href="#discord">Mi Discord</a>
     </div>
     <div class="hero-datos" aria-label="Información del perfil">
       <span>STAFF DE SUPERCRAFT</span>
@@ -95,8 +97,6 @@
         <dd>10 de diciembre de 2023</dd>
         <dt>Ubicación</dt>
         <dd>Colombia</dd>
-        <dt>Portafolio</dt>
-        <dd><a href="https://duartedev.lat/">duartedev.lat</a></dd>
       </dl>
     </aside>
 
@@ -104,7 +104,7 @@
       <section id="sobre-mi">
         <h2>Sobre mí en SuperCraft</h2>
         <p class="destacado">Soy Duarte, moderador del staff de SuperCraft.</p>
-        <p class="suave">Entré al staff por primera vez el 10 de diciembre de 2023. Desde el 11 de abril de 2026 estoy de nuevo en el equipo como moderador. Fuera de la comunidad estudio programación y construyo proyectos con Python, HTML y CSS; los puedes ver en mi portafolio.</p>
+        <p class="suave">Entré al staff por primera vez el 10 de diciembre de 2023. Desde el 11 de abril de 2026 estoy de nuevo en el equipo como moderador. Fuera de la comunidad estudio programación y construyo proyectos con Python, HTML y CSS.</p>
       </section>
 
       <section id="experiencia">
@@ -137,6 +137,34 @@
       </section>
       -->
 
+      <section id="discord">
+        <h2>Mi Discord</h2>
+        <p class="destacado">Mi perfil, estado y actividad reciente.</p>
+        <div class="discord-profile" data-discord-profile>
+          <div class="discord-identidad">
+            <div class="discord-avatar">
+              <span data-discord-fallback aria-hidden="true">D</span>
+              <img data-discord-avatar alt="Avatar de Discord de Duarte" hidden width="76" height="76">
+            </div>
+            <div>
+              <h3><span class="discord-indicator" data-discord-indicator></span><span data-discord-name>Duaartee_</span></h3>
+              <p class="discord-username" data-discord-username>@Duaartee_</p>
+              <p class="discord-status" data-discord-status>Conectando a Discord…</p>
+            </div>
+          </div>
+          <p class="discord-bio" data-discord-bio></p>
+          <p class="discord-custom-status" data-discord-custom-status></p>
+          <div class="discord-activity" data-discord-activity></div>
+          <p class="discord-devices" data-discord-devices></p>
+          <p class="discord-live-label" data-discord-live hidden>Presencia en tiempo real</p>
+          <div class="discord-acciones">
+            <a class="boton" data-discord-link href="https://discord.com/users/1220880019782369375" target="_blank" rel="noopener noreferrer">Ver perfil de Discord ↗</a>
+            <button type="button" class="copiar" id="copiar-discord">Copiar usuario</button>
+          </div>
+          <p class="estado" id="estado" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
       <section id="enlaces">
         <h2>Enlaces</h2>
         <div class="fila-datos">
@@ -148,19 +176,16 @@
             <li><a href="https://supercraft.es" target="_blank" rel="noopener noreferrer">Página de SuperCraft</a></li>
             <li><a href="https://discord.gg/supercraft" target="_blank" rel="noopener noreferrer">Discord de SuperCraft</a></li>
             <li><a href="https://namemc.com/profile/Duaarte.2" target="_blank" rel="noopener noreferrer">Perfil en NameMC</a></li>
-            <li><a href="https://duartedev.lat/">Portafolio de programador</a></li>
             <li><a href="https://github.com/DuarteJesus" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><span>Mi usuario de Discord:</span> <a href="https://ptb.discord.com/users/1220880019782369375" target="_blank" rel="noopener noreferrer">Duaartee_</a> <button type="button" class="copiar" id="copiar-discord">Copiar usuario</button></li>
           </ul>
         </div>
-        <p class="estado" id="estado" role="status" aria-live="polite"></p>
       </section>
     </div>
   </main>
 
   <footer class="pie">
     <span>Perfil de staff de Duarte · SuperCraft · 2026</span>
-    <span><a href="https://duartedev.lat/">Portafolio</a> · <a href="privacidad.html">Privacidad</a> · <a href="#inicio">Volver arriba</a></span>
+    <span><a href="privacidad.html">Privacidad</a> · <a href="#inicio">Volver arriba</a></span>
     <span class="aviso">Página personal. No es el sitio oficial de SuperCraft.</span>
   </footer>
 

@@ -6,6 +6,7 @@ window.SITE = {
   roles: ["Python", "Web", "Aprendiendo", "Construyendo"],
   updated: "22/10/2026",
   discordId: "1220880019782369375", // tu ID numérico de Discord (presencia en vivo vía Lanyard); déjalo vacío si no lo quieres
+  discordBio: "ᴍᴏᴅᴇʀᴀᴅᴏʀ ᴏɴ ꜱᴜᴘᴇʀᴄʀᴀꜰᴛ:  https://tienda.supercraft.es/",
   about: {
     title: "Curiosidad primero. El código viene después.",
     text: "Soy Duarte Jesús Alzamora Castro, estudiante de Ingeniería de Sistemas en Colombia, desarrollador web en formación y moderador del staff de SuperCraft. Aprendo creando cosas que puedo usar: desde una calculadora sencilla hasta una app de finanzas con cuentas, usuarios y sincronización.",
